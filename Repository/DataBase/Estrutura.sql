@@ -15,3 +15,7 @@ CREATE TABLE usuarios(
 	data_nascimento DATETIME2,
 	id_contabilidade INT
 );
+
+CREATE TABLE contas_receber(
+id INT PRIMARY KEY IDENTITY(1,1)
+);
