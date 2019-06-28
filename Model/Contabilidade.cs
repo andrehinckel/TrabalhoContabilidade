@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository
+namespace Model
 {
-    public class Class1
+    public class Contabilidade
     {
+        public int Id;
+        public string Nome;
     }
 }
