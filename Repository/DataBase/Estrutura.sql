@@ -16,6 +16,10 @@ CREATE TABLE usuarios(
 	id_contabilidade INT
 );
 
+CREATE TABLE contas_pagar(
+	id INT PRIMARY KEY IDENTITY(1,1),
+);
+
 CREATE TABLE contas_receber(
-id INT PRIMARY KEY IDENTITY(1,1)
+	id INT PRIMARY KEY IDENTITY(1,1)
 );
