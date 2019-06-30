@@ -79,7 +79,7 @@ clientes.id AS 'Id',
 clientes.nome AS 'Nome',
 clientes.cpf AS 'Cpf'
 FROM clientes
-INNER JOIN clientes ON(clientes.id_contabilidade = contabilidade.id)";
+INNER JOIN contabilidades ON(clientes.id_contabilidade = contabilidades.id)";
 
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
