@@ -30,6 +30,8 @@ namespace View.Controllers
             ClienteRepository clienteRepository = new ClienteRepository();
             List<Cliente> clientes = clienteRepository.ObterTodos();
             ViewBag.Cliente = clientes;
+
+            CategoriaRepo
             return ViewBag();
         }
 

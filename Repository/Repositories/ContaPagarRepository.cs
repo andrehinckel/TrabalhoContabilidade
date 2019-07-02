@@ -86,13 +86,13 @@ INNER JOIN categorias ON(contas_pagar.id_categoria = categorias.id)";
             foreach(DataRow row in table.Rows)
             {
                 ContaPagar contaPagar = new ContaPagar();
-                contaPagar.Id = Convert.ToInt32(row["id"]);
+                contaPagar.Id = Convert.ToInt32(row["Id"]);
                 contaPagar.IdCliente = Convert.ToInt32(row["ClienteId"]);
                 contaPagar.IdCategoria = Convert.ToInt32(row["CategoriaId"]);
-                contaPagar.DataVencimento = Convert.ToDateTime(row["data_vencimento"]);
-                contaPagar.DataPagamento = Convert.ToDateTime(row["data_pagamento"]);
-                contaPagar.Nome = row["nome"].ToString();
-                contaPagar.Valor = Convert.ToDecimal(row["valor"]);
+                contaPagar.DataVencimento = Convert.ToDateTime(row["DataVencimento"]);
+                contaPagar.DataPagamento = Convert.ToDateTime(row["DataPagamento"]);
+                contaPagar.Nome = row["Nome"].ToString();
+                contaPagar.Valor = Convert.ToDecimal(row["Valor"]);
 
                 contaPagar.Cliente = new Cliente();
                 contaPagar.Cliente.Id = Convert.ToInt32(row["ClienteId"]);
