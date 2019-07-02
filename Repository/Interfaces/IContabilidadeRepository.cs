@@ -11,12 +11,12 @@ namespace Repository.Interfaces
     {
         int Inserir(Contabilidade contabilidade);
 
-        bool Alterar(Contabilidade contabilidade);
-
-        bool Apagar(int id);
-
         List<Contabilidade> ObterTodos();
 
+        bool Update(Contabilidade contabilidade);
+
         Contabilidade ObterPeloId(int id);
+
+        bool Delete(int id);
     }
 }

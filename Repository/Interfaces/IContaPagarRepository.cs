@@ -15,7 +15,7 @@ namespace Repository.Interfaces
 
         bool Delete(int id);
 
-        List<ContaPagar> ObterTodos(string pesquisa);
+        List<ContaPagar> ObterTodos();
 
         ContaPagar ObterPeloId(int id);
 
