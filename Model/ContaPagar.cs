@@ -15,9 +15,9 @@ namespace Model
         public DateTime DataPagamento;
 
         public int IdCliente;
-        Cliente Cliente;
+        public Cliente Cliente;
 
         public int IdCategoria;
-        Categoria Categoria;
+        public Categoria Categoria;
     }
 }

@@ -3,6 +3,7 @@ using Repository.DataBase;
 using Repository.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -40,12 +41,70 @@ OUTPUT INSERTED.ID VALUES(@ID_CLIENTE, @ID_CATEGORIA, @NOME, @DATA_VENCIMENTO, @
 
         public ContaPagar ObterPeloId(int id)
         {
-            throw new NotImplementedException();
+            SqlCommand command = Connection.OpenConnection();
+            command.CommandText = @"SELECT * FROM contas_pagar WHERE id = @ID";
+            command.Parameters.AddWithValue("@ID", id);
+            DataTable table = new DataTable();
+            table.Load(command.ExecuteReader());
+            command.Connection.Close();
+            if (table.Rows.Count == 0)
+            {
+                return null;
+            }
+
+            DataRow row = table.Rows[0];
+            ContaPagar contaPagar = new ContaPagar();
+            contaPagar.Id = Convert.ToInt32(row["id"]);
+            contaPagar.IdCliente = Convert.ToInt32(row["id_cliente"]);
+            contaPagar.IdCategoria = Convert.ToInt32(row["id_categoria"]);
+            contaPagar.Nome = row["nome"].ToString();
+            contaPagar.DataVencimento = Convert.ToDateTime(row["data_vencimento"]);
+            contaPagar.DataPagamento = Convert.ToDateTime(row["data_pagamento"]);
+            contaPagar.Valor = Convert.ToDecimal(row["valor"]);
+
+            return contaPagar;
         }
 
         public List<ContaPagar> ObterTodos(string pesquisa)
         {
-            throw new NotImplementedException();
+            SqlCommand command = Connection.OpenConnection();
+            command.CommandText = @"SELECT clientes.id AS 'ClienteId', clientes.nome AS 'ClienteNome',
+clientes.cpf AS 'ClienteCpf',
+categorias.id AS 'CategoriaId',
+categorias.nome AS 'CategoriaNome',
+contas_pagar.id AS 'Id',
+contas_pagar.nome AS 'Nome',
+contas_pagar.data_vencimento AS 'DataVencimento',
+contas_pagar.data_pagamento AS 'DataPagamento',
+contas_pagar.valor AS 'Valor' FROM contas_pagar INNER JOIN clientes ON(contas_pagar.id_cliente = clientes.id)
+INNER JOIN categorias ON(contas_pagar.id_categoria = categorias.id)";
+            DataTable table = new DataTable();
+            table.Load(command.ExecuteReader());
+            List<ContaPagar> ContasPagar = new List<ContaPagar>();
+            command.Connection.Close();
+
+            foreach(DataRow row in table.Rows)
+            {
+                ContaPagar contaPagar = new ContaPagar();
+                contaPagar.Id = Convert.ToInt32(row["id"]);
+                contaPagar.IdCliente = Convert.ToInt32(row["ClienteId"]);
+                contaPagar.IdCategoria = Convert.ToInt32(row["CategoriaId"]);
+                contaPagar.DataVencimento = Convert.ToDateTime(row["data_vencimento"]);
+                contaPagar.DataPagamento = Convert.ToDateTime(row["data_pagamento"]);
+                contaPagar.Nome = row["nome"].ToString();
+                contaPagar.Valor = Convert.ToDecimal(row["valor"]);
+
+                contaPagar.Cliente = new Cliente();
+                contaPagar.Cliente.Id = Convert.ToInt32(row["ClienteId"]);
+                contaPagar.Cliente.Nome = row["ClienteNome"].ToString();
+                contaPagar.Cliente.Cpf = row["ClienteCpf"].ToString();
+
+                contaPagar.Categoria = new Categoria();
+                contaPagar.Categoria.Id = Convert.ToInt32(row["CategoriaId"]);
+                contaPagar.Categoria.Nome = row["CategoriaNome"].ToString();
+                ContasPagar.Add(contaPagar);
+            }
+            return ContasPagar;
         }
 
         public bool Update(ContaPagar contaPagar)
