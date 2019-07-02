@@ -24,7 +24,7 @@ CREATE TABLE categorias(
 CREATE TABLE contas_pagar(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	id_cliente INT,
-	id_categorai INT,
+	id_categoria INT,
 	nome VARCHAR(45),
 	data_vencimento DATETIME2,
 	data_pagamento DATETIME2,
@@ -34,7 +34,7 @@ CREATE TABLE contas_pagar(
 CREATE TABLE contas_receber(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	id_cliente INT,
-	id_cateoria INT,
+	id_categoria INT,
 	nome VARCHAR(45),
 	data_pagamento DATETIME2,
 	valor DECIMAL(10,2)
