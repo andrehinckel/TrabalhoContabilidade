@@ -112,21 +112,25 @@ INNER JOIN clientes ON(contas_receber.id_cliente = clientes.id)";
             foreach(DataRow row in table.Rows)
             {
                 ContaReceber contaReceber = new ContaReceber();
+
+                contaReceber.IdCategoria = Convert.ToInt32(row["CategoriaId"]);     
+                contaReceber.IdCliente = Convert.ToInt32(row["ClienteId"]);
                 contaReceber.Id = Convert.ToInt32(row["Id"]);
                 contaReceber.Nome = row["Nome"].ToString();
                 contaReceber.DataPagamento = Convert.ToDateTime(row["DataPagamento"]);
                 contaReceber.Valor = Convert.ToDecimal(row["Valor"]);
-                //contaReceber.Categoria = new Categoria();
 
-                contaReceber.IdCategoria = Convert.ToInt32(row["CategoriaId"]);     
-                contaReceber.IdCliente = Convert.ToInt32(row["ClienteId"]);
+                contaReceber.Categoria = new Categoria();
+                contaReceber.Categoria.Id = Convert.ToInt32(row["CategoriaId"]);
+                contaReceber.Categoria.Nome = row["CategoriaNome"].ToString();
+
+                contaReceber.Cliente = new Cliente();
+                contaReceber.Cliente.Id = Convert.ToInt32(row["ClienteId"]);
+                contaReceber.Cliente.Nome = row["ClienteNome"].ToString();
+                contaReceber.Cliente.Cpf = row["ClienteCpf"].ToString();
+                contasReceber.Add(contaReceber);
             }
             return contasReceber;
-
-            
-
-
-
         }
     }
 }

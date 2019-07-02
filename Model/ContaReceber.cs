@@ -11,10 +11,10 @@ namespace Model
         public int Id;
 
         public int IdCliente;
-        Cliente Cliente;
+        public Cliente Cliente;
 
         public int IdCategoria;
-        Categoria Categoria;
+        public Categoria Categoria;
 
         public string Nome;
         public DateTime DataPagamento;
