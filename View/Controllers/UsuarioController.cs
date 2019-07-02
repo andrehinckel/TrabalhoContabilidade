@@ -28,7 +28,7 @@ namespace View.Controllers
         {
             ContabilidadeRepository contabilidadeRepository = new ContabilidadeRepository();
             List<Contabilidade> contabilidades = contabilidadeRepository.ObterTodos();
-            ViewBag.Contabilidade = contabilidades;
+            ViewBag.Contabilidades = contabilidades;
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace View.Controllers
 
             ContabilidadeRepository contabilidadeRepository = new ContabilidadeRepository();
             List<Contabilidade> contabilidades = contabilidadeRepository.ObterTodos();
-            ViewBag.Contabilidade = contabilidades;
+            ViewBag.Contabilidades = contabilidades;
 
             return View();
         }

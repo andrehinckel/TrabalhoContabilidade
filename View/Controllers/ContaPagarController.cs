@@ -29,11 +29,11 @@ namespace View.Controllers
         {
             ClienteRepository clienteRepository = new ClienteRepository();
             List<Cliente> clientes = clienteRepository.ObterTodos();
-            ViewBag.Cliente = clientes;
+            ViewBag.Clientes = clientes;
 
             CategoriaRepository categoriaRepository = new CategoriaRepository();
             List<Categoria> categorias = categoriaRepository.ObterTodos();
-            ViewBag.Categoria = categorias;
+            ViewBag.Categorias = categorias;
             return View();
         }
 
@@ -63,11 +63,11 @@ namespace View.Controllers
 
             ClienteRepository clienteRepository = new ClienteRepository();
             List<Cliente> clientes = clienteRepository.ObterTodos();
-            ViewBag.Cliente = clientes;
+            ViewBag.Clientes = clientes;
 
             CategoriaRepository categoriaRepository = new CategoriaRepository();
             List<Categoria> categorias = categoriaRepository.ObterTodos();
-            ViewBag.Categoria = categorias;
+            ViewBag.Categorias = categorias;
 
             return View();
         }
