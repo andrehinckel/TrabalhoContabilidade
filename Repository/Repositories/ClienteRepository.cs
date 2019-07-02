@@ -69,7 +69,7 @@ namespace Repository.Repositories
             return cliente;
         }
 
-        public List<Cliente> ObterTodos(string pesquisa)
+        public List<Cliente> ObterTodos()
         {
             SqlCommand command = Connection.OpenConnection();
             command.CommandText = @"SELECT

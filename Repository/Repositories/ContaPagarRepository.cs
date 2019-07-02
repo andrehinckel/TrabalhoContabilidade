@@ -65,7 +65,7 @@ OUTPUT INSERTED.ID VALUES(@ID_CLIENTE, @ID_CATEGORIA, @NOME, @DATA_VENCIMENTO, @
             return contaPagar;
         }
 
-        public List<ContaPagar> ObterTodos(string pesquisa)
+        public List<ContaPagar> ObterTodos()
         {
             SqlCommand command = Connection.OpenConnection();
             command.CommandText = @"SELECT clientes.id AS 'ClienteId', clientes.nome AS 'ClienteNome',

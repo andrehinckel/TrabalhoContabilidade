@@ -20,7 +20,7 @@ namespace View.Controllers
         // GET: Cliente
         public ActionResult Index()
         {
-            List<Cliente> clientes = repositorio.ObterTodos("");
+            List<Cliente> clientes = repositorio.ObterTodos();
             ViewBag.Clientes = clientes;
             return View();
         }
