@@ -31,8 +31,10 @@ namespace View.Controllers
             List<Cliente> clientes = clienteRepository.ObterTodos();
             ViewBag.Cliente = clientes;
 
-            CategoriaRepo
-            return ViewBag();
+            CategoriaRepository categoriaRepository = new CategoriaRepository();
+            List<Categoria> categorias = categoriaRepository.ObterTodos();
+            ViewBag.Categoria = categorias;
+            return View();
         }
 
         public ActionResult Store(int idCliente, int idCategoria, string nome, DateTime dataVencimento, DateTime dataPagamento, decimal valor)
@@ -62,7 +64,12 @@ namespace View.Controllers
             ClienteRepository clienteRepository = new ClienteRepository();
             List<Cliente> clientes = clienteRepository.ObterTodos();
             ViewBag.Cliente = clientes;
-            return ViewBag();
+
+            CategoriaRepository categoriaRepository = new CategoriaRepository();
+            List<Categoria> categorias = categoriaRepository.ObterTodos();
+            ViewBag.Categoria = categorias;
+
+            return View();
         }
 
         public ActionResult Update(int id, int idCliente, int idCategoria, string nome, DateTime dataVencimento, DateTime dataPagamento, decimal valor)
