@@ -24,6 +24,53 @@ namespace View.Controllers
             return View();
         }
 
+        public ActionResult Cadastro()
+        {
+            ContabilidadeRepository contabilidadeRepository = new ContabilidadeRepository();
+            List<Contabilidade> contabilidades = contabilidadeRepository.ObterTodos();
+            ViewBag.Contabilidade = contabilidades;
+            return View();
+        }
 
+        public ActionResult Store(string login, string senha, DateTime dataNascimento, int idContabilidade)
+        {
+            Usuario usuario = new Usuario();
+            usuario.Login = login;
+            usuario.Senha = senha;
+            usuario.DataNascimento = dataNascimento;
+            usuario.IdContabilidade = idContabilidade;
+            repository.Inserir(usuario);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            repository.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Editar(int id)
+        {
+            Usuario usuario = repository.ObterPeloId(id);
+            ViewBag.Usuario = usuario;
+
+            ContabilidadeRepository contabilidadeRepository = new ContabilidadeRepository();
+            List<Contabilidade> contabilidades = contabilidadeRepository.ObterTodos();
+            ViewBag.Contabilidade = contabilidades;
+
+            return View();
+        }
+
+        public ActionResult Update(int id, string login, string senha, DateTime dataNascimento, int idContabilidade)
+        {
+            Usuario usuario = new Usuario();
+            usuario.Id = id;
+            usuario.Login = login;
+            usuario.Senha = senha;
+            usuario.DataNascimento = dataNascimento;
+            usuario.IdContabilidade = idContabilidade;
+            repository.Update(usuario);
+            return RedirectToAction("Index");
+        }
     }
 }
