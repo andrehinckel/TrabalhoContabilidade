@@ -10,7 +10,9 @@ namespace Model
     {
         public int Id;
         public int IdContabilidade;
+
         public Contabilidade Contabilidade;
+
         public string Nome;
         public string Cpf;
     }
