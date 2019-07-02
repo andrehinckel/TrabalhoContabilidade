@@ -2,6 +2,7 @@
 using Repository.DataBase;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,47 @@ OUTPUT INSERTED.ID VALUES(@ID_CARTAO_CREDITO, @VALOR, @DATA_COMPRA)";
             command.Connection.Close();
             return id;
 
+        }
+
+        public Compra ObterPeloId(int id)
+        {
+            SqlCommand command = Connection.OpenConnection();
+            command.CommandText = @"SELECT * FROM compras WHERE id = @ID";
+            command.Parameters.AddWithValue("@id", id);
+            DataTable table = new DataTable();
+            table.Load(command.ExecuteReader());
+            command.Connection.Close();
+            if (table.Rows.Count == 0)
+            {
+                return null;
+            }
+
+            DataRow row = table.Rows[0];
+            Compra compra = new Compra();
+            compra.Id = Convert.ToInt32(row["id"]);
+            compra.IdCartaoCredito = Convert.ToInt32(row["id_cartao_credito"]);
+            compra.Valor = Convert.ToDecimal(row["valor"]);
+            compra.DataCompra = Convert.ToDateTime(row["data_compra"]);
+
+            return compra;
+        }
+
+        public List<Compra> ObterTodos()
+        {
+            SqlCommand command = Connection.OpenConnection();
+            command.CommandText = @"SELECT cartoes_credito AS 'Cartao'";
+        }
+
+        public bool Update(Compra compra)
+        {
+            SqlCommand command = Connection.OpenConnection();
+            command.CommandText = @"UPDATE compras SET id_cartao_credito = @ID_CARTAO_CREDITO, valor = @VALOR, data_compra = @DATA_COMPRA WHERE id = @ID";
+            command.Parameters.AddWithValue("@ID_CARTAO_CREDITO", compra.IdCartaoCredito);
+            command.Parameters.AddWithValue("@VALOR", compra.Valor);
+            command.Parameters.AddWithValue("@DATA_COMPRA", compra.DataCompra);
+            int quantidadeAfetada = command.ExecuteNonQuery();
+            command.Connection.Close();
+            return quantidadeAfetada == 1;
         }
     }
 }
