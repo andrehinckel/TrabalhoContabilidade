@@ -17,7 +17,6 @@ namespace View.Controllers
             repository = new ContabilidadeRepository();
         }
 
-
         // GET: Contabilidade
         public ActionResult Index()
         {
