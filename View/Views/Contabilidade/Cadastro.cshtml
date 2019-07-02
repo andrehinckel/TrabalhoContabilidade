@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h3>Cadastro</h3>
+
+<form action="@Url.Action("Store")" method="post">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input class="form-control" type="text" name="nome"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-outline-primary" type="submit">
+                <i class="fas spinner-grow text-primary"></i> Salvar
+            </button>
+        </div>
+    </div>
+</form>
+
