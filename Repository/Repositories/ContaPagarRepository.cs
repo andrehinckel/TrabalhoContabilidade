@@ -112,7 +112,7 @@ INNER JOIN categorias ON(contas_pagar.id_categoria = categorias.id)";
             SqlCommand command = Connection.OpenConnection();
             command.CommandText = @"UPDATE contas_pagar SET id_cliente = @ID_CLIENTE, id_categoria = @ID_CATEGORIA,
 nome = @NOME, data_vencimento = @DATA_VENCIMENTO, data_pagamento = @DATA_PAGAMENTO, valor = @VALOR WHERE id = @ID";
-            command.Parameters.AddWithValue("ID_CLIENTE", contaPagar.IdCliente);
+            command.Parameters.AddWithValue("@ID_CLIENTE", contaPagar.IdCliente);
             command.Parameters.AddWithValue("@ID_CATEGORIA", contaPagar.IdCategoria);
             command.Parameters.AddWithValue("@NOME", contaPagar.Nome);
             command.Parameters.AddWithValue("@DATA_VENCIMENTO", contaPagar.DataVencimento);
