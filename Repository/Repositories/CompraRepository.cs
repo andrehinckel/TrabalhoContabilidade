@@ -62,7 +62,27 @@ OUTPUT INSERTED.ID VALUES(@ID_CARTAO_CREDITO, @VALOR, @DATA_COMPRA)";
         public List<Compra> ObterTodos()
         {
             SqlCommand command = Connection.OpenConnection();
-            command.CommandText = @"SELECT cartoes_credito AS 'Cartao'";
+            command.CommandText = @"SELECT cartoes_credito.id AS 'CartaoCreditoId',
+cartoes_credito.numero AS 'CartaoCreditoNumero',
+cartoes_credito.data_vencimento AS 'CartaoCreditoDataVencimento',
+cartoes_credito.cvv AS 'CartaoCreditoCvv',
+compras.id AS 'Id',
+compras.id_cartao_credito AS 'IdCartaoCredito',
+compras.valor AS 'Valor',
+compras.data_compra AS 'Data_Compra'
+FROM compras INNER JOIN compras ON(compras.id = cartoes_credito.id)";
+
+            DataTable table = new DataTable();
+            table.Load(command.ExecuteReader());
+            List<Compra> compras = new List<Compra>();
+            command.Connection.Close();
+
+            foreach(DataRow row in table.Rows)
+            {
+                Compra compra = new Compra();
+                compra.Id = Convert.ToInt32(row["id"]);
+            }
+            return;
         }
 
         public bool Update(Compra compra)
