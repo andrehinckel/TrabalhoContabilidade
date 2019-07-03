@@ -82,7 +82,7 @@ FROM compras INNER JOIN compras ON(compras.id = cartoes_credito.id)";
                 Compra compra = new Compra();
                 compra.Id = Convert.ToInt32(row["id"]);
             }
-            return;
+            return compras;
         }
 
         public bool Update(Compra compra)
