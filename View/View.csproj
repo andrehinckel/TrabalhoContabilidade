@@ -211,7 +211,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Controllers\CartaoCreditoController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
@@ -235,13 +234,10 @@
     <Content Include="Views\Contabilidade\Cadastro.cshtml" />
     <Content Include="Views\Contabilidade\Index.cshtml" />
     <Content Include="Views\ContaPagar\Index.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Contabilidade\Editar.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
-=======
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\ContaPagar\Cadastro.cshtml" />
->>>>>>> bcf67f4ffe18f4fccc343653ebc9749c4f6a4e6c
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -251,11 +247,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-<<<<<<< HEAD
-=======
     <Folder Include="Views\CartaoCredito\" />
     <Folder Include="Views\Categoria\" />
->>>>>>> bcf67f4ffe18f4fccc343653ebc9749c4f6a4e6c
     <Folder Include="Views\Compra\" />
     <Folder Include="Views\ContaReceber\" />
     <Folder Include="Views\Usuario\" />
