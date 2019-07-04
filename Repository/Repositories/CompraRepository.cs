@@ -74,15 +74,23 @@ FROM compras INNER JOIN compras ON(compras.id = cartoes_credito.id)";
 
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
-            List<Compra> compras = new List<Compra>();
+            List<Compra> Compras = new List<Compra>();
             command.Connection.Close();
 
             foreach(DataRow row in table.Rows)
             {
                 Compra compra = new Compra();
-                compra.Id = Convert.ToInt32(row["id"]);
+                compra.Id = Convert.ToInt32(row["Id"]);
+                compra.IdCartaoCredito = Convert.ToInt32(row["IdCartaoCredito"]);
+                compra.Valor = Convert.ToDecimal(row["Valor"]);
+                compra.DataCompra = Convert.ToDateTime(row["DataCompra"]);
+
+                compra.CartaoCredito = new CartaoCredito();
+                compra.CartaoCredito.Id = Convert.ToInt32(row["id"]);
+                Compras.Add(compra);
             }
-            return compras;
+            return Compras;
+            
         }
 
         public bool Update(Compra compra)

@@ -1,9 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Index2";
 }
-
-<h3>Contas a Pagar</h3>
 
 <div class="row">
     <div class="col-12">
@@ -18,6 +16,8 @@
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
+                    <th>Nome do Cliente</th>
+                    <th>Cpf do Cliente</th>
                     <th>Data Vencimento</th>
                     <th>Data Pagamento</th>
                     <th>Valor</th>
@@ -28,10 +28,10 @@
                 @foreach (Model.ContaPagar contaPagar in ViewBag.ContasPagar)
                 {
                     <tr>
-                        <td>@contaPagar.Id</td>                        
+                        <td>@contaPagar.Id</td>
                         <td>@contaPagar.Nome</td>
                         <td>@contaPagar.Cliente.Nome</td>
-                        <td>@contaPagar.Categoria.Nome</td>
+                        <td>@contaPagar.Cliente.Cpf</td>
                         <td>@contaPagar.DataVencimento</td>
                         <td>@contaPagar.DataPagamento</td>
                         <td>@contaPagar.Valor</td>
