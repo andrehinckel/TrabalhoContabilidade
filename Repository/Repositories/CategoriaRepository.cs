@@ -16,7 +16,7 @@ namespace Repository.Repositories
         public bool Delete(int id)
         {
             SqlCommand command = Connection.OpenConnection();
-            command.CommandText = "DELETE FROM contabilidades WHERE id = @ID";
+            command.CommandText = "DELETE FROM categorias WHERE id = @ID";
             command.Parameters.AddWithValue("@ID", id);
             int quantidadeAfetada = command.ExecuteNonQuery();
             command.Connection.Close();
@@ -37,6 +37,7 @@ namespace Repository.Repositories
         {
             SqlCommand command = Connection.OpenConnection();
             command.CommandText = @"SELECT * FROM categorias WHERE id = @ID";
+            command.Parameters.AddWithValue("@ID", id);
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
             command.Connection.Close();

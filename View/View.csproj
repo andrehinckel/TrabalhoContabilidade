@@ -238,8 +238,9 @@
     <Content Include="Views\Categoria\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\ContaPagar\Cadastro.cshtml" />
-    <Content Include="Views\Cliente\Cadastro.cshtml" />
-    <Content Include="Views\Cliente\Editar.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Cadastro.cshtml" />
+    <Content Include="Views\Usuario\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -252,7 +253,6 @@
     <Folder Include="Views\CartaoCredito\" />
     <Folder Include="Views\Compra\" />
     <Folder Include="Views\ContaReceber\" />
-    <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
