@@ -13,6 +13,7 @@
                 <label for="campo-contabilidade">Contabilidade</label>
                 <select id="campo-contabilidade" name="idContabilidade" class="form-control">
                     <option disabled="disabled" selected="selected">Selecione um Item</option>
+
                     @foreach (Model.Contabilidade contabilidade in ViewBag.Contabilidades)
                     {
                         <option value="@contabilidade.Id">@contabilidade.Nome</option>
