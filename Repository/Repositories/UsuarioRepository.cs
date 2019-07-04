@@ -40,7 +40,7 @@ OUTPUT INSERTED.ID VALUES(@LOGIN, @SENHA, @DATA_NASCIMENTO, @ID_CONTABILIDADE)";
         public Usuario ObterPeloId(int id)
         {
             SqlCommand command = Connection.OpenConnection();
-            command.CommandText = @"SELECT * FROM WHERE id @ID";
+            command.CommandText = @"SELECT * FROM usuarios WHERE id = @ID";
             command.Parameters.AddWithValue("@ID", id);
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
@@ -51,6 +51,7 @@ OUTPUT INSERTED.ID VALUES(@LOGIN, @SENHA, @DATA_NASCIMENTO, @ID_CONTABILIDADE)";
             }
             DataRow row = table.Rows[0];
             Usuario usuario = new Usuario();
+            usuario.Id = Convert.ToInt32(row["id"]);
             usuario.Login = row["login"].ToString();
             usuario.Senha = row["senha"].ToString();
             usuario.DataNascimento = Convert.ToDateTime(row["data_nascimento"]);

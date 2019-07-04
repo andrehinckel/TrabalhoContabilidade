@@ -18,6 +18,7 @@
             <th>Login</th>
             <th>Senha</th>
             <th>Data Nascimento</th>
+            <th>Ação</th>
         </tr>
     </thead>
 
@@ -30,6 +31,11 @@
                 <td>@usuario.Login</td>
                 <td>@usuario.Senha</td>
                 <td>@usuario.DataNascimento</td>
+                <td>
+                    <a href="@Url.Action("Editar", new { id = usuario.Id})" class="btn btn-outline-primary"><i class="fas fa-pen"></i> Update</a>
+
+                    <a href="@Url.Action("Delete", new { id = usuario.Id})" class="btn btn-outline-danger"><i class="fas fa-pen"></i> Delete </a>
+                </td>
             </tr>
         }
     </tbody>
@@ -41,6 +47,7 @@
             <th>Login</th>
             <th>Senha</th>
             <th>Data Nascimento</th>
+            <th>Ação</th>
         </tr>
     </tfoot>
 </table>
