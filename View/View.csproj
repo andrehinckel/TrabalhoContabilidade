@@ -235,6 +235,8 @@
     <Content Include="Views\Contabilidade\Cadastro.cshtml" />
     <Content Include="Views\Contabilidade\Index.cshtml" />
     <Content Include="Views\ContaPagar\Index.cshtml" />
+    <Content Include="Views\Contabilidade\Editar.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -244,7 +246,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Compra\" />
     <Folder Include="Views\ContaReceber\" />
     <Folder Include="Views\Usuario\" />

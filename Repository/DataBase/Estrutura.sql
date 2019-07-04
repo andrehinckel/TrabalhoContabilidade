@@ -1,4 +1,5 @@
-﻿CREATE TABLE contabilidades(
+﻿
+CREATE TABLE contabilidades(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(45)
 );
