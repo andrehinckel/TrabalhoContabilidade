@@ -36,7 +36,8 @@ namespace Repository.Repositories
         public Contabilidade ObterPeloId(int id)
         {
             SqlCommand command = Connection.OpenConnection();
-            command.CommandText = @"SELECT * FROM contabilidades WHERE id = @ID";
+            command.CommandText = "SELECT * FROM contabilidades WHERE id = @ID";
+            command.Parameters.AddWithValue("@ID", id);
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
             command.Connection.Close();
