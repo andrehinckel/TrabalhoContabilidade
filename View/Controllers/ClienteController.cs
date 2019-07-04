@@ -29,8 +29,8 @@ namespace View.Controllers
         {
             ContabilidadeRepository contabilidadeRepository = new ContabilidadeRepository();
             List<Contabilidade> contabilidades = contabilidadeRepository.ObterTodos();
-            ViewBag.Contabilidade = contabilidades;
-            return ViewBag();
+            ViewBag.Contabilidades = contabilidades;
+            return View();
         }
 
         public ActionResult Store(int idContabilidade, string nome, string cpf)

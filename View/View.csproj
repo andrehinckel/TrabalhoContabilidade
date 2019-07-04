@@ -245,6 +245,7 @@
     <Content Include="Views\Categoria\Cadastro.cshtml" />
     <Content Include="Views\Categoria\Editar.cshtml" />
     <Content Include="Views\Compra\Cadastro.cshtml" />
+    <Content Include="Views\Principal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
