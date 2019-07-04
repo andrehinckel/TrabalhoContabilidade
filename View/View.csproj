@@ -327,6 +327,10 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Usuario\Cadastro.cshtml" />
     <Content Include="Views\Usuario\Editar.cshtml" />
+    <Content Include="Views\Compra\Index.cshtml" />
+    <Content Include="Views\Categoria\Cadastro.cshtml" />
+    <Content Include="Views\Categoria\Editar.cshtml" />
+    <Content Include="Views\Compra\Cadastro.cshtml" />
     <Content Include="Views\Principal.cshtml" />
     <Content Include="Views\Cliente\Cadastro.cshtml" />
     <Content Include="Views\Cliente\Editar.cshtml" />
@@ -343,7 +347,6 @@
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\CartaoCredito\" />
-    <Folder Include="Views\Compra\" />
     <Folder Include="Views\ContaReceber\" />
   </ItemGroup>
   <ItemGroup>

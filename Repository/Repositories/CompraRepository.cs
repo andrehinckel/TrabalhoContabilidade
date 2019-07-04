@@ -70,11 +70,11 @@ compras.id AS 'Id',
 compras.id_cartao_credito AS 'IdCartaoCredito',
 compras.valor AS 'Valor',
 compras.data_compra AS 'DataCompra'
-FROM compras INNER JOIN compras ON(compras.id = cartoes_credito.id)";
+FROM compras INNER JOIN cartoes_credito ON(compras.id = cartoes_credito.id)";
 
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
-            List<Compra> Compras = new List<Compra>();
+            List<Compra> compras = new List<Compra>();
             command.Connection.Close();
 
             foreach(DataRow row in table.Rows)
@@ -90,9 +90,9 @@ FROM compras INNER JOIN compras ON(compras.id = cartoes_credito.id)";
                 compra.CartaoCredito.Numero = row["CartaoCreditoNumero"].ToString();
                 compra.CartaoCredito.DataVencimento = Convert.ToDateTime(row["CartaoCreditoDataVencimento"]);
                 compra.CartaoCredito.Cvv = row["CartaoCreditoCvv"].ToString();
-                Compras.Add(compra);
+                compras.Add(compra);
             }
-            return Compras;
+            return compras;
             
         }
 
