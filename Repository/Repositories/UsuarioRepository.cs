@@ -65,9 +65,8 @@ OUTPUT INSERTED.ID VALUES(@LOGIN, @SENHA, @DATA_NASCIMENTO, @ID_CONTABILIDADE)";
             command.CommandText = @"SELECT contabilidades.id AS 'ContabilidadeId', contabilidades.nome AS 'ContabilidadeNome',
 usuarios.id AS 'Id',
 usuarios.login AS 'Login',
-usuarios.senhha AS 'Senha',
-usuarios.data_nascimento AS 'DataNascimento',
-INNER JOIN contabilidades ON(usuarios.id_contabilidade = contabilidades.id)";
+usuarios.senha AS 'Senha',
+usuarios.data_nascimento AS 'DataNascimento' FROM usuarios INNER JOIN contabilidades ON(usuarios.id_contabilidade = contabilidades.id)";
             DataTable table = new DataTable();
             table.Load(command.ExecuteReader());
             List<Usuario> usuarios = new List<Usuario>();

@@ -235,6 +235,8 @@
     <Content Include="Views\ContaPagar\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\ContaPagar\Cadastro.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Cadastro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -247,7 +249,6 @@
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Compra\" />
     <Folder Include="Views\ContaReceber\" />
-    <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
