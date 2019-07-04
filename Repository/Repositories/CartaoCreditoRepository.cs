@@ -66,15 +66,52 @@ data_vencimanto = @DATA_VENCIMENTO, cvv = @CVV WHERE id = @ID";
             {
                 return null;
             }
+
             DataRow row = table.Rows[0];
             CartaoCredito cartaoCredito = new CartaoCredito();
-
+            cartaoCredito.Id = Convert.ToInt32(row["id"]);
+            cartaoCredito.IdCliente = Convert.ToInt32(row["id_cliente"]);
+            cartaoCredito.Numero = row["numero"].ToString();
+            cartaoCredito.DataVencimento = Convert.ToDateTime(row["data_vencimento"]);
+            cartaoCredito.Cvv = row["cvv"].ToString();
             return cartaoCredito;
         }
 
         public List<CartaoCredito> ObterTodos()
         {
-            throw new NotImplementedException();
+            SqlCommand command = Connection.OpenConnection();
+            command.CommandText = @"SELECT
+clientes.id AS 'ClienteId',
+clientes.nome AS 'ClienteNome',
+clientes.cpf AS 'ClienteCpf',
+
+cartoes_credito.id AS 'Id',
+cartoes_credito.numero AS 'Numero',
+cartoes_credito.cvv AS 'Cvv',
+cartoes_credito.data_vencimento AS 'DataVencimento',
+FROM cartoes_credito
+INNER JOIN clientes ON(cartoes_credito.id_cliente = clientes.id)";
+
+            DataTable table = new DataTable();
+            table.Load(command.ExecuteReader());
+            command.Connection.Close();
+            List<CartaoCredito> cartoesCredito = new List<CartaoCredito>();
+
+            foreach(DataRow row in table.Rows)
+            {
+                CartaoCredito cartaoCredito = new CartaoCredito();
+                cartaoCredito.Id = Convert.ToInt32(row["Id"]);
+                cartaoCredito.Numero = row["Numero"].ToString();
+                cartaoCredito.Cvv = row["Cvv"].ToString();
+                cartaoCredito.DataVencimento = Convert.ToDateTime(row["DataVencimento"]);
+
+                cartaoCredito.Cliente = new Cliente();
+                cartaoCredito.Cliente.Id = Convert.ToInt32(row["ClienteId"]);
+                cartaoCredito.Cliente.Nome = row["ClienteNome"].ToString();
+                cartaoCredito.Cliente.Cpf = row["ClienteCpf"].ToString();
+                cartoesCredito.Add(cartaoCredito);
+            }
+            return cartoesCredito;
         }
     }
 }
