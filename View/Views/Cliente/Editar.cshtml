@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar Clientes</h2>
+
+<form action="@Url.Action("Update")" method="post">
+    <input type="hidden" name="id" value="@ViewBag.Cliente.Id" />
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-contabilidade">Contabilidade</label>
+                <select id="campo-contabilidade" name="idContabilidade" class="form-control">
+
+                    @foreach (Model.Contabilidade contabilidade in ViewBag.Contabilidade)
+                    {
+                        if (contabilidade.Id == ViewBag.Cliente.IdContabilidade)
+                        {
+                            <option value="@contabilidade.Id" selected="selected">@contabilidade.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@contabilidade.Id">@contabilidade.Nome</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Cliente.Nome" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-cpf">CPF</label>
+                <input type="text" id="campo-cpf" name="cpf" value="@ViewBag.Cliente.Cpf" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-success" typeof="submit"><i class="fas fa-save"> Salvar</i></button> 
+        </div>
+
+    </div>
+</form>
+
