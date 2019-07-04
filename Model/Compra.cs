@@ -9,8 +9,11 @@ namespace Model
     public class Compra
     {
         public int Id;
-        public int IdCartaoCredito;
         public decimal Valor;
         public DateTime DataCompra;
+
+        public int IdCartaoCredito;
+        public CartaoCredito CartaoCredito;
+
     }
 }
