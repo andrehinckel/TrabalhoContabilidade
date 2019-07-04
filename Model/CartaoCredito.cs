@@ -10,10 +10,11 @@ namespace Model
     {
         public int Id;
 
-        public Contabilidade Contabilidade;
-        public int IdContabilidade;
+        public Cliente Cliente;
+        public int IdCliente;
 
-        public string Nome;
-        public string Cpf;
+        public string Numero;
+        public DateTime DataVencimento;
+        public string Cvv;
     }
 }
