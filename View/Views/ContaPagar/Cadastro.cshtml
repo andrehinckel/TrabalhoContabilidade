@@ -14,6 +14,8 @@
                     @foreach(Model.Cliente cliente in ViewBag.Clientes)
                     {
                         <option value="@cliente.Id">@cliente.Nome</option>
+
+                        <option value="@cliente.Id">@cliente</option>
                     }
                 </select>
             </div>
