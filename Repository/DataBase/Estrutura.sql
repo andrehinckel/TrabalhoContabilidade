@@ -55,3 +55,6 @@ CREATE TABLE compras(
 	valor DECIMAL(10,2),
 	data_compra DATETIME2
 );
+
+
+Select * from compras;

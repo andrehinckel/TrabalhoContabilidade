@@ -39,6 +39,7 @@ namespace View.Controllers
             compra.IdCartaoCredito = idCartaoCredito;
             compra.Valor = valor;
             compra.DataCompra = dataCompra;
+            repository.Inserir(compra);
             return RedirectToAction("Index");
         }
 

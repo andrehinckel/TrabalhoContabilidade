@@ -15,8 +15,6 @@
                     @foreach(Model.CartaoCredito cartaoCredito in ViewBag.CartoesCredito)
                     {
                         <option value="@cartaoCredito.Id">@cartaoCredito.Numero</option>
-
-                        <option value="@cartaoCredito.Id">@cartaoCredito.Cvv</option>
                     }
                 </select>
             </div>
