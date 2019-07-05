@@ -88,7 +88,7 @@ clientes.cpf AS 'ClienteCpf',
 cartoes_credito.id AS 'Id',
 cartoes_credito.numero AS 'Numero',
 cartoes_credito.cvv AS 'Cvv',
-cartoes_credito.data_vencimento AS 'DataVencimento',
+cartoes_credito.data_vencimento AS 'DataVencimento'
 FROM cartoes_credito
 INNER JOIN clientes ON(cartoes_credito.id_cliente = clientes.id)";
 

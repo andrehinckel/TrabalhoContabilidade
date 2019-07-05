@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h3>Editar</h3>
+
+<form action="@Url.Action("Update")" method="post">
+    <input type="hidden" name="id" value="@ViewBag.Compra.Id" />
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-cartao-credito">Cartão de Crédito</label>
+                <select id="campo-cartao-credito" name="idCartaoCredito" class="form-control">
+                    @foreach (Model.CartaoCredito cartaoCredito in ViewBag.CartoesCredito)
+                    {
+                        if (cartaoCredito.Id == ViewBag.Compra.IdCartaoCredito)
+                        {
+                            <option value="@cartaoCredito.Id" selected="selected">@cartaoCredito.Numero</option>
+                        }
+                        else
+                        {
+                            <option value="@cartaoCredito.Id">@cartaoCredito.Numero</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-valor">Valor</label>
+                <input type="number" id="campo-valor" name="valor" value="@ViewBag.Compra.Valor" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-data-compra">Data de Compra</label>
+                <input type="date" id="campo-data-compra" name="dataCompra" value="@ViewBag.Compra.DataCompra" class="form-control"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-success" typeof="submit"><i class="fas fa-save"></i> Salvar</button>
+        </div>
+    </div>
+</form>
