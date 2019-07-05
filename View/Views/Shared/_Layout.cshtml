@@ -5,54 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/fontawesome-all.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+
+    <link href="~/Content/css/simple-sidebar.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sidebar-header">
-        <a class="navbar-brand" href="#">Gestão de Contabilidades</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom">
+        <a class="navbar-brand text-white" href="#" >Gestão de Contabilidades</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-search-minus"></i> 
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Contabilidades
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="@Url.Action("Index", "Usuario")">Usuarios</a>
-                <a class="dropdown-item" href="@Url.Action("Index", "Cliente")">Clientes</a>
-                <a class="dropdown-item" href="@Url.Action("Index", "Contabilidade")">Nova Contabilidade</a>
-            </div>
-        </div>
+        <div id="page-content-wrapper">
+        
+                <button class="btn" id="menu-toggle"></button>
 
-        <div class="dropdown">
-            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categorias
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="@Url.Action("Index", "ContaPagar")">Contas Pagar</a>
-                <a class="dropdown-item" href="@Url.Action("Index", "ContaReceber")">Contas Receber</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href="@Url.Action("Index", "CartaoCredito")">Cartões de Crédito</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index", "Compra")">Compras</a>
-                </li>
-            </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <script src="~/Content/vendor/jquery/scriptsidebar.js"></script>
+
         </div>
 
     </nav>
 
+    <div class="d-flex" id="wrapper">
+
+        <!-- Sidebar -->
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+            <div class="sidebar-heading">Start Bootstrap </div>
+
+          
+               
+                    <div class="btn-group-sm dropright" aria-labelledby="dropdownMenuButton">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropright
+                        </button>
+                        <div class="dropdown-menu-sm">
+                            <a class="dropdown-item" href="@Url.Action("Index", "Usuario")">Usuarios</a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Cliente")">Clientes</a>
+                            <a class="dropdown-item" href="@Url.Action("Index", "Contabilidade")">Nova Contabilidade</a>
+                          
+                        </div>
+                    </div>
+
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="@Url.Action("Index", "ContaPagar")">Contas Pagar</a>
+                    <a class="dropdown-item" href="@Url.Action("Index", "ContaReceber")">Contas Receber</a>
+                </div>
+
+
+                <a class="nav-link" href="@Url.Action("Index", "CartaoCredito")">Cartões de Crédito</a>
+
+
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+       
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/umd/popper.min.js"></script>
 
     <div class="container-fluid mt-3">
         @RenderBody()
     </div>
 
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>
