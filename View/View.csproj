@@ -364,6 +364,10 @@
     <Content Include="Views\CartaoCredito\Cadastro.cshtml" />
     <Content Include="Views\CartaoCredito\Editar.cshtml" />
     <Content Include="Views\Compra\Editar.cshtml" />
+    <Content Include="Views\ContaPagar\Editar.cshtml" />
+    <Content Include="Views\ContaReceber\Index.cshtml" />
+    <Content Include="Views\ContaReceber\Cadastro.cshtml" />
+    <Content Include="Views\ContaReceber\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Index2";
+    ViewBag.Title = "Index";
 }
 
 <div class="row">
@@ -21,6 +21,7 @@
                     <th>Data Vencimento</th>
                     <th>Data Pagamento</th>
                     <th>Valor</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
 
@@ -36,8 +37,8 @@
                         <td>@contaPagar.DataPagamento</td>
                         <td>@contaPagar.Valor</td>
                         <td>
-                            <a href="@Url.Action("Editar", new { Id = contaPagar.Id })">Update</a>
-                            <a href="@Url.Action("Apagar", new { Id = contaPagar.Id })">Delete</a>
+                            <a href="@Url.Action("Editar", new { Id = contaPagar.Id })" class="btn btn-primary"><i class="fas fa-pen"></i> Update</a>
+                            <a href="@Url.Action("Delete", new { Id = contaPagar.Id })" class="btn btn-danger"> <i class="fas fa-trash"></i> Delete</a>
                         </td>
                     </tr>
                 }

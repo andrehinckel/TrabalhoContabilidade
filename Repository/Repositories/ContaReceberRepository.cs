@@ -16,7 +16,7 @@ namespace Repository.Repositories
         public bool Alterar(ContaReceber contaReceber)
         {
             SqlCommand command = Connection.OpenConnection();
-            command.CommandText = @"UPDATE FROM contas_receber SET 
+            command.CommandText = @"UPDATE contas_receber SET 
 id_cliente = @ID_CLIENTE, 
 id_categoria = @ID_CATEGORIA, 
 nome = @NOME, 
@@ -25,8 +25,9 @@ valor = @VALOR WHERE id = @ID";
             command.Parameters.AddWithValue("@ID_CLIENTE", contaReceber.IdCliente);
             command.Parameters.AddWithValue("@ID_CATEGORIA", contaReceber.IdCategoria);
             command.Parameters.AddWithValue("@NOME", contaReceber.Nome);
-            command.Parameters.AddWithValue("@DATA_PAGAMENTO", contaReceber.Nome);
+            command.Parameters.AddWithValue("@DATA_PAGAMENTO", contaReceber.DataPagamento);
             command.Parameters.AddWithValue("@VALOR", contaReceber.Valor);
+            command.Parameters.AddWithValue("@ID", contaReceber.Id);
             int quantidade = command.ExecuteNonQuery();
             command.Connection.Close();
             return quantidade == 1;
@@ -66,7 +67,7 @@ valor = @VALOR WHERE id = @ID";
             table.Load(command.ExecuteReader());
             command.Connection.Close();
 
-            if (table.Rows.Count == 1)
+            if (table.Rows.Count == 0)
             {
                 return null;
             }
@@ -89,16 +90,16 @@ valor = @VALOR WHERE id = @ID";
             SqlCommand command = Connection.OpenConnection();
             command.CommandText = @"SELECT
 categorias.id AS 'CategoriaId',
-categorias.nome AS 'Categoria.Nome',
+categorias.nome AS 'CategoriaNome',
 
-clientes.id AS 'ClientesId',
-clientes.nome AS 'Clientes.Nome',
-clientes.cpf AS 'Clientes.Cpf',
+clientes.id AS 'ClienteId',
+clientes.nome AS 'ClienteNome',
+clientes.cpf AS 'ClienteCpf',
 
 contas_receber.id AS 'Id',
 contas_receber.nome AS 'Nome',
 contas_receber.data_pagamento AS 'DataPagamento',
-contas_receber.valor AS 'Valor',
+contas_receber.valor AS 'Valor'
 FROM contas_receber
 INNER JOIN categorias ON(contas_receber.id_categoria = categorias.id)
 INNER JOIN clientes ON(contas_receber.id_cliente = clientes.id)";
