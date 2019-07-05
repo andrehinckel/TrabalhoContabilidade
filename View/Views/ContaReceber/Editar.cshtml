@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar Conta Receber</h2>
+
+<form action="@Url.Action("Update")" method="post">
+    <input type="hidden" name="id" value="@ViewBag.ContaReceber.Id" />
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-cliente">Clientes</label>
+                <select id="campo-cliente" name="idCliente" class="form-control">
+                    @foreach (Model.Cliente cliente in ViewBag.Clientes)
+                    {
+                        if (cliente.Id == ViewBag.ContaReceber.IdCliente)
+                        {
+                            <option value="@cliente.Id" selected="selected">@cliente.Nome, @cliente.Cpf</option>
+                        }
+                        else
+                        {
+                            <option value="@cliente.Id">@cliente.Nome, @cliente.Cpf</option>
+                        }
+                    }
+                </select>
+
+                <label for="campo-categoria">Categorias</label>
+                <select id="campo-categoria" name="idCategoria" class="form-control">
+                    @foreach (Model.Categoria categoria in ViewBag.Categorias)
+                    {
+                        if (categoria.Id == ViewBag.ContaReceber.IdCategoria)
+                        {
+                            <option value="@categoria.Id" selected="selected">@categoria.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@categoria.Id">@categoria.Nome</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaReceber.Nome" class="form-control" />
+
+                <label for="campo-data-pagamento">Data Pagamento</label>
+                <input type="date" name="dataPagamento" id="campo-data-pagamento" value="@ViewBag.ContaReceber.DataPagamento.ToString("yyyy-MM-dd")" class="form-control" />
+
+                <label for="campo-valor">Valor</label>
+                <input type="text" name="valor" value="@ViewBag.ContaReceber.Valor" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-success" type="submit">
+                <i class="fas fa-save"></i> Salvar
+            </button>
+        </div>
+    </div>
+</form>
+

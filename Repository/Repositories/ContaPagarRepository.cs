@@ -68,10 +68,14 @@ OUTPUT INSERTED.ID VALUES(@ID_CLIENTE, @ID_CATEGORIA, @NOME, @DATA_VENCIMENTO, @
         public List<ContaPagar> ObterTodos()
         {
             SqlCommand command = Connection.OpenConnection();
-            command.CommandText = @"SELECT clientes.id AS 'ClienteId', clientes.nome AS 'ClienteNome',
+            command.CommandText = @"SELECT 
+clientes.id AS 'ClienteId', 
+clientes.nome AS 'ClienteNome',
 clientes.cpf AS 'ClienteCpf',
+
 categorias.id AS 'CategoriaId',
 categorias.nome AS 'CategoriaNome',
+
 contas_pagar.id AS 'Id',
 contas_pagar.nome AS 'Nome',
 contas_pagar.data_vencimento AS 'DataVencimento',

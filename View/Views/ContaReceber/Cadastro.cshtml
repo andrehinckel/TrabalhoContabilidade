@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h3>Cadastro Conta Receber</h3>
+<form action="@Url.Action("Store")" method="post">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-cliente">Cliente</label>
+                <select id="campo-cliente" name="idCliente" class="form-control">
+                    <option disabled="disabled" selected="selected">Selecione um Cliente</option>
+                    @foreach(Model.Cliente cliente in ViewBag.Clientes)
+                    {
+                        <option value="@cliente.Id">@cliente.Nome, @cliente.Cpf</option>
+                    }
+                </select>
+
+                <label for="campo-categoria">Categoria</label>
+                <select id="campo-categoria" name="idCategoria" class="form-control">
+                    <option disabled="disabled" selected="selected">Selecione uma Categoria</option>
+                    @foreach(Model.Categoria categoria in ViewBag.Categorias)
+                    {
+                        <option value="@categoria.Id">@categoria.Nome</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-nome">Nome</label>
+                <input type="text" name="nome" id="campo-nome" class="form-control" />
+
+                <label for="campo-data-pagamento">Data Pagamento</label>
+                <input type="date" name="dataPagamento" class="form-control" id="campo-data-pagamento" />
+
+                <label for="campo-valor">Valor</label>
+                <input type="number" name="valor" class="form-control" id="campo-valor" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-success float-right"><i class="fas fa-save"></i> Salvar</button>
+        </div>
+    </div>
+</form>
+

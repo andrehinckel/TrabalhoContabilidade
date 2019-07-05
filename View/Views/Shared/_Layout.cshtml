@@ -17,17 +17,18 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom">
-        <a class="navbar-brand text-white" href="#" >Gestão de Contabilidades</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><i class="fa-search-minus"></i> 
+        <a class="navbar-brand text-white" href="#">Gestão de Contabilidades</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-search-minus"></i>
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="page-content-wrapper">
-        
-                <button class="btn" id="menu-toggle"></button>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <button class="btn" id="menu-toggle"></button>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <script src="~/Content/vendor/jquery/scriptsidebar.js"></script>
 
@@ -41,41 +42,42 @@
         <div class="bg-dark border-right" id="sidebar-wrapper">
             <div class="sidebar-heading">Start Bootstrap </div>
 
-          
-               
-                    <div class="btn-group-sm dropright" aria-labelledby="dropdownMenuButton">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropright
-                        </button>
-                        <div class="dropdown-menu-sm">
-                            <a class="dropdown-item" href="@Url.Action("Index", "Usuario")">Usuarios</a>
-                            <a class="dropdown-item" href="@Url.Action("Index", "Cliente")">Clientes</a>
-                            <a class="dropdown-item" href="@Url.Action("Index", "Contabilidade")">Nova Contabilidade</a>
-                          
-                        </div>
+            <div class="dropdown show">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown button
+                </button>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu-sm">
+                        <a class="dropdown-item" href="@Url.Action("Index", "Usuario")">Usuarios</a>
+                        <a class="dropdown-item" href="@Url.Action("Index", "Cliente")">Clientes</a>
+                        <a class="dropdown-item" href="@Url.Action("Index", "Contabilidade")">Nova Contabilidade</a>
                     </div>
 
+
+                </div>
+
+            </div>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="@Url.Action("Index", "ContaPagar")">Contas Pagar</a>
                     <a class="dropdown-item" href="@Url.Action("Index", "ContaReceber")">Contas Receber</a>
+                    <a class="dropdown-item" href="@Url.Action("Index", "CartaoCredito")">Cartões de Crédito</a>
                 </div>
 
 
-                <a class="nav-link" href="@Url.Action("Index", "CartaoCredito")">Cartões de Crédito</a>
 
 
         </div>
-        <!-- /#sidebar-wrapper -->
-        <!-- Page Content -->
-       
+
     </div>
+
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/umd/popper.min.js"></script>
 
     <div class="container-fluid mt-3">
-        @RenderBody()
+     @RenderBody()
     </div>
 
 </body>

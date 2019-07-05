@@ -13,9 +13,18 @@
                     <option disabled="disabled" selected="selected">Selecione um Cliente</option>
                     @foreach(Model.Cliente cliente in ViewBag.Clientes)
                     {
-                        <option value="@cliente.Id">@cliente.Nome</option>
+                        <option value="@cliente.Id">@cliente.Nome, @cliente.Cpf</option>
 
-                        <option value="@cliente.Id">@cliente</option>
+                        
+                    }
+                </select>
+
+                <label for="campo-categoria">Categoria</label>
+                <select id="campo-categoira" name="idCategoria" class="form-control">
+                    <option disabled="disabled" selected="selected">Selecione uma Categoria</option>
+                    @foreach(Model.Categoria categoria in ViewBag.Categorias)
+                    {
+                        <option value="@categoria.Id">@categoria.Nome</option>
                     }
                 </select>
             </div>
