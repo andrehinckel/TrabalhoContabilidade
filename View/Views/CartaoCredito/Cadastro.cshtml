@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h3>Cadastro de Cartões de Crédito</h3>
+
+<form action="@Url.Action("Store")" method="post">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-cliente">Cliente</label>
+                <select id="campo-cliente" name="idCliente" class="form-control">
+                    @foreach (Model.Cliente cliente in ViewBag.Clientes)
+                    {
+                        <option value="@cliente.Id">@cliente.Nome</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-numero">Número</label>
+                <input type="text" name="numero" id="campo-numero" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-data-vencimento">Data Vencimento</label>
+                <input type="datetime" name="dataVencimento" id="campo-data-vencimento" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="campo-cvv">Cvv</label>
+                <input type="text" name="cvv" id="campo-cvv" class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <button class="btn btn-success float-lg-right"><i class="fas fa-save"></i> Salvar</button>
+            </div>
+        </div>
+    </div>
+</form>
+

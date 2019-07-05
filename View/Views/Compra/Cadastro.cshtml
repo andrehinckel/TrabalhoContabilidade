@@ -9,8 +9,37 @@
     <div class="row">
         <div class="col-12">
             <div class="form-group">
-                <label></label>
+                <label for="campo-cartao-credito">Cartão de Crédito</label>
+                <select id="campo-cartao-credio" name="idCartaoCredito" class="form-control">
+                    <option disabled="disabled" selected="selected">Selecione um cartão de crédito</option>
+                    @foreach(Model.CartaoCredito cartaoCredito in ViewBag.CartoesCredito)
+                    {
+                        <option value="@cartaoCredito.Id">@cartaoCredito.Numero</option>
+
+                        <option value="@cartaoCredito.Id">@cartaoCredito.Cvv</option>
+                    }
+                </select>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+
+                <label for="campo-valor">Valor</label>
+                <input type="text" name="valor" id="campo-valor" class="form-control"/>
+
+                <label for="campo-data-compra">Data de Compra</label>
+                <input type="date" name="dataCompra" id="campo-data-compra" class="form-control"/>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-success float-right"><i class="fas fa-save"></i> Salvar</button>
         </div>
     </div>
 </form>
