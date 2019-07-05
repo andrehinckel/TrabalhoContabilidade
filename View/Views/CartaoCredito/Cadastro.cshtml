@@ -10,8 +10,8 @@
     <div class="row">
         <div class="col-12">
             <div class="form-group">
-                <label for="campo-cartao-credito">Cartão de Crédito</label>
-                <select id="campo-cartao-credito" name="idCartaoCredito" class="form-control">
+                <label for="campo-cliente">Cliente</label>
+                <select id="campo-cliente" name="idCliente" class="form-control">
                     @foreach (Model.Cliente cliente in ViewBag.Clientes)
                     {
                         <option value="@cliente.Id">@cliente.Nome</option>
