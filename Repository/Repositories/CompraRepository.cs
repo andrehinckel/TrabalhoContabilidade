@@ -106,6 +106,7 @@ INNER JOIN cartoes_credito ON(compras.id_cartao_credito = cartoes_credito.id)";
             command.Parameters.AddWithValue("@VALOR", compra.Valor);
             command.Parameters.AddWithValue("@DATA_COMPRA", compra.DataCompra);
             int quantidadeAfetada = command.ExecuteNonQuery();
+            command.Connection.Close();
             return quantidadeAfetada == 1;
         }
     }
