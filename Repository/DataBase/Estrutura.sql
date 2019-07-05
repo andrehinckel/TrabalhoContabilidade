@@ -57,4 +57,3 @@ CREATE TABLE compras(
 );
 
 
-Select * from compras;

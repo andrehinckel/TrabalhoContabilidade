@@ -5,13 +5,30 @@
 
 <h3>Cadastro de Clientes</h3>
 
-<form action="@Url.Action("Store")" method="post">
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var form = document.getElementById('needs-validation');
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+</script>
+
+
+<form action="@Url.Action("Store")" method="post" id="needs-validation" novalidate>
 
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-contabilidade">Contabilidade</label>
-                <select id="campo-contabilidade" name="idContabilidade" class="form-control">
+                <select id="campo-contabilidade" name="idContabilidade" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione um Item</option>
 
                     @foreach (Model.Contabilidade contabilidade in ViewBag.Contabilidades)
@@ -19,6 +36,7 @@
                         <option value="@contabilidade.Id">@contabilidade.Nome</option>
                     }
                 </select>
+                <div class="invalid-feedback">Selecione um cliente</div>
             </div>
         </div>
     </div>
@@ -27,7 +45,10 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" name="nome" id="campo-nome" class="form-control" />
+                <input type="text" name="nome" id="campo-nome" class="form-control" aria-describedby="inputGroupPrepend" required />
+                <div class="invalid-feedback">
+                    Digite um Nome valido
+                </div>
             </div>
         </div>
     </div>
@@ -36,7 +57,10 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cpf">CPF</label>
-                <input type="text" name="cpf" id="campo-cpf" class=" cpf form-control" />
+                <input type="text" name="cpf" id="campo-cpf" class=" cpf form-control" aria-describedby="inputGroupPrepend" required />
+                <div class="invalid-feedback">
+                    Digite um Cpf valido
+                </div>
                 <script>
                     jQuery(function ($) {
                         $(".cpf").mask("999.999.999-99");
