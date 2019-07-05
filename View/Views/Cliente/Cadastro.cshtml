@@ -36,7 +36,13 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cpf">CPF</label>
-                <input type="text" name="cpf" id="campo-cpf" class="form-control" />
+                <input type="text" name="cpf" id="campo-cpf" class=" cpf form-control" />
+                <script>
+                    jQuery(function ($) {
+                        $(".cpf").mask("999.999.999-99");
+                    });
+                </script>
+
             </div>
         </div>
     </div>

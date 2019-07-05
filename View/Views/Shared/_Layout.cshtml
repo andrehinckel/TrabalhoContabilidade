@@ -30,7 +30,6 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="@Url.Action("Index", "ContaPagar")">Contas Pagar</a>
                 <a class="dropdown-item" href="@Url.Action("Index", "ContaReceber")">Contas Receber</a>
-                <a class="dropdown-item" href="#">Something else here</a>
             </div>
         </div>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -44,19 +43,24 @@
             </ul>
         </div>
 
-            <button class="btn" id="menu-toggle">
-                <i class="fas fa-hamburger"></i>
-            </button>
+        <button class="btn" id="menu-toggle">
+            <i class="fas fa-hamburger"></i>
+        </button>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
 
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/umd/popper.min.js"></script>
+
+
+
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
 
     <div class="container-fluid mt-3">
         @RenderBody()
