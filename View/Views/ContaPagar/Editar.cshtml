@@ -55,11 +55,9 @@
 
                 <label for="campo-data-vencimento">Data de Vencimento</label>
                 <input type="date" name="dataVencimento" id="campo-data-vencimento" value="@ViewBag.ContaPagar.DataVencimento.ToString("yyyy-MM-dd")" class="form-control" required />
-                <div class="invalid-feedback">Digite uma Data de Vencimento</div>
 
                 <label for="campo-data-pagamento">Data Pagamento</label>
                 <input type="date" name="dataPagamento" id="campo-data-pagamento" value="@ViewBag.ContaPagar.DataPagamento.ToString("yyyy-MM-dd")" class="form-control" required />
-                <div class="invalid-feedback">Digite uma Data de Pagamento</div>
 
                 <label for="campo-valor">Valor</label>
                 <input type="text" name="valor" id="campo-valor" value="@ViewBag.ContaPagar.Valor" class="form-control" required />
