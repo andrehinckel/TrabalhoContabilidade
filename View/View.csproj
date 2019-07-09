@@ -178,6 +178,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\brands.css" />
     <Content Include="Content\brands.min.css" />
+    <Content Include="Content\css\background.css" />
     <Content Include="Content\css\contabilidade06.png" />
     <Content Include="Content\css\principal.css" />
     <Content Include="Content\css\simple-sidebar.css" />
@@ -300,7 +301,6 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Views\contabilidade.jpg" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
