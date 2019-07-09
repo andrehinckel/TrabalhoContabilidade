@@ -12,6 +12,7 @@
             <div class="form-group">
                 <label for="campo-cliente">Cliente</label>
                 <select id="campo-cliente" name="idCliente" class="form-control">
+
                     @foreach (Model.Cliente cliente in ViewBag.Clientes)
                     {
                         <option value="@cliente.Id">@cliente.Nome</option>
