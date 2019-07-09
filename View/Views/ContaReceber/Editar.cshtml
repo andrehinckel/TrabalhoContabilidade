@@ -47,13 +47,13 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaReceber.Nome" class="form-control" />
+                <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaReceber.Nome" class="form-control" required/>
 
                 <label for="campo-data-pagamento">Data Pagamento</label>
-                <input type="date" name="dataPagamento" id="campo-data-pagamento" value="@ViewBag.ContaReceber.DataPagamento.ToString("yyyy-MM-dd")" class="form-control" />
+                <input type="date" name="dataPagamento" id="campo-data-pagamento" value="@ViewBag.ContaReceber.DataPagamento.ToString("yyyy-MM-dd")" class="form-control" required/>
 
                 <label for="campo-valor">Valor</label>
-                <input type="text" name="valor" value="@ViewBag.ContaReceber.Valor" class="form-control" />
+                <input type="text" name="valor" value="@ViewBag.ContaReceber.Valor" class="form-control" required/>
             </div>
         </div>
     </div>

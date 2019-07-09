@@ -178,13 +178,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\brands.css" />
     <Content Include="Content\brands.min.css" />
-    <Content Include="Content\css\compras.css" />
+    <Content Include="Content\css\contabilidade02.jpg" />
+    <Content Include="Content\css\contabilidade04.jpg" />
+    <Content Include="Content\css\contabilidade3.jpg" />
+    <Content Include="Content\css\planofundocompra.jpg" />
+    <Content Include="Content\css\principal.css" />
     <Content Include="Content\css\simple-sidebar.css" />
     <Content Include="Content\fontawesome-all.css" />
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
     <Content Include="Content\nav.css" />
+    <Content Include="Content\notebook-with-dollars-symbol.ico" />
     <Content Include="Content\regular.css" />
     <Content Include="Content\regular.min.css" />
     <Content Include="Content\css\Site.css" />
@@ -298,6 +303,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\contabilidade.jpg" />
     <Content Include="Web.config" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
