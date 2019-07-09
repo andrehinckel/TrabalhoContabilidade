@@ -32,9 +32,9 @@
                 <td>@usuario.Senha</td>
                 <td>@usuario.DataNascimento</td>
                 <td>
-                    <a href="@Url.Action("Editar", new { id = usuario.Id})" class="btn btn-outline-info"><i class="fas fa-pen"></i> Update</a>
+                    <a href="@Url.Action("Editar", new { id = usuario.Id})" class="btn btn-outline-info"><i class="fas fa-pen"></i> Editar</a>
 
-                    <a href="@Url.Action("Delete", new { id = usuario.Id})" class="btn btn-outline-danger"><i class="fas fa-pen"></i> Delete </a>
+                    <a href="@Url.Action("Delete", new { id = usuario.Id})" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Apagar</a>
                 </td>
             </tr>
         }
