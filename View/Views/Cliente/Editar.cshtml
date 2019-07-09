@@ -6,7 +6,7 @@
 <h3 class="titulo">Editar Clientes</h3>
 
 <form action="@Url.Action("Update")" method="post">
-    <input type="hidden" name="id" value="@ViewBag.Cliente.Id" />
+    <input type="hidden" name="id" value="@ViewBag.Cliente.Id" required/>
 
     <div class="row">
         <div class="col-12">
@@ -34,7 +34,7 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Cliente.Nome" class="form-control" />
+                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Cliente.Nome" class="form-control" required/>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cpf">CPF</label>
-                <input type="text" id="campo-cpf" name="cpf" value="@ViewBag.Cliente.Cpf" class="form-control" />
+                <input type="text" id="campo-cpf" name="cpf" value="@ViewBag.Cliente.Cpf" class="form-control" required/>
             </div>
         </div>
     </div>
