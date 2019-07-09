@@ -3,26 +3,10 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h3>Cadastro de Clientes</h3>
-
-<script type="text/javascript">
-    (function () {
-        'use strict';
-        window.addEventListener('load', function () {
-            var form = document.getElementById('needs-validation');
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        }, false);
-    })();
-</script>
+<h3 class="titulo">Cadastro de Clientes</h3>
 
 
-<form action="@Url.Action("Store")" method="post" id="needs-validation" novalidate>
+<form action="@Url.Action("Store")" method="post" id="needs-validation">
 
     <div class="row">
         <div class="col-12">
@@ -61,11 +45,7 @@
                 <div class="invalid-feedback">
                     Digite um Cpf valido
                 </div>
-                <script>
-                    jQuery(function ($) {
-                        $(".cpf").mask("999.999.999-99");
-                    });
-                </script>
+               
 
             </div>
         </div>
@@ -75,9 +55,7 @@
         <div class="col-12">
             <div>
                 <button class="btn btn-success float-lg-right"><i class="fas fa-save"></i> Salvar</button>
-                <ul>
-                    <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Cliente")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
-                </ul>
+   
             </div>
         </div>
     </div>
