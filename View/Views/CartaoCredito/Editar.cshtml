@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label for="campo-numer">Número</label>
                 <input type="text" id="campo-numero" name="numero" value="@ViewBag.CartaoCredito.Numero" class="form-control" required/>
-                <div class="invalid-feedback"> Digite um Nome válido</div>
+                <div class="invalid-feedback">Digite um Número válido</div>
             </div>
         </div>
     </div>
@@ -45,7 +45,6 @@
             <div class="form-group">
                 <label for="campo-data-vencimento">Data Vencimento</label>
                 <input type="date" id="campo-data-vencimento" name="dataVencimento" value="@ViewBag.CartaoCredito.DataVencimento.ToString("yyyy-MM-dd")" class="form-control" />
-                <div class="invalid-feedback"> Selecione uma data válida</div>
             </div>
         </div>
     </div>
@@ -54,7 +53,7 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cvv">Cvv</label>                <input type="text" name="cvv" id="campo-cvv" class="form-control"value="@ViewBag.CartaoCredito.Cvv" required/>               
-                <div class="invalid-feedback"> Digite um cvv válido</div>
+                <div class="invalid-feedback"> Digite um Cvv Válido</div>
             </div>
         </div>
     </div>

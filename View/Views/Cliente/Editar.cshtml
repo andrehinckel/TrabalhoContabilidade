@@ -34,7 +34,8 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Cliente.Nome" class="form-control" required/>
+                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Cliente.Nome" class="form-control" required />
+                <div class="invalid-feedback">Digite um Nome Válido</div>
             </div>
         </div>
     </div>
@@ -43,14 +44,15 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cpf">CPF</label>
-                <input type="text" id="campo-cpf" name="cpf" value="@ViewBag.Cliente.Cpf" class="form-control" required/>
+                <input type="text" id="campo-cpf" name="cpf" value="@ViewBag.Cliente.Cpf" class="form-control" required />
+                <div class="invalid-feedback">Digite um Cpf Válido</div>
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12">
-            <button class="btn btn-success float-right" typeof="submit"><i class="fas fa-save"> Salvar</i></button>
+            <button class="btn btn-success float-right" typeof="submit"><i class="fas fa-save"></i>Salvar</button>
      
         </div>
 
