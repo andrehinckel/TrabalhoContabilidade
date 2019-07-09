@@ -5,5 +5,62 @@
 
 <h3>Editar Cartão de Cédito</h3>
 
-<form action
+<form action="@Url.Action("Update")" method="post">
+    <input type="hidden" name="id" value="@ViewBag.CartaoCredito.Id" />
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label form="campo-cliente">Cleinte</label>
+                <select id="campo-cliente" name="idCliente" class="form-control">
+
+                    @foreach (Model.Cliente cliente in ViewBag.Clientes)
+                    {
+                        if(cliente.Id == ViewBag.CartaoCredito.IdCliente)
+                        {
+                           <option value="@cliente.Id" selected="selected">@cliente.Nome</option>
+                        }
+                        else
+                        {
+                            <option value="@cliente.Id">@cliente.Nome</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label class="campo-numer">Número</label>
+                <input type="text" id="campo-numero" name="numero" value="@ViewBag.CartaoCredito.Numero" class="form-control"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label class="campo-data-vencimento">Data Vencimento</label>
+                <input type="date" id="campo-data-vencimento" name="dataVencimento" value="@ViewBag.CartaoCredito.DataVencimento.ToString()" class="form-control"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label class="campo-cvv">Cvv</label>
+                <input type="text" id="campo-cvv" name="cvv" value="@ViewBag.CartaoCredito.Cvv" class="form-group"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <button class="btn btn-success" typeof="submit"><i class="fas fa-save"></i> Salvar</button>
+        </div>
+    </div>
+</form>
 
