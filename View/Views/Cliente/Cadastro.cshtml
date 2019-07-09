@@ -6,7 +6,7 @@
 <h3 class="titulo">Cadastro de Clientes</h3>
 
 
-<form action="@Url.Action("Store")" method="post" id="needs-validation">
+<form action="@Url.Action("Store")" method="post" id="needs-validation" novalidate>
 
     <div class="row">
         <div class="col-12">
@@ -28,8 +28,8 @@
     <div class="row">
         <div class="col-12">
             <div class="form-group">
-                <label for="campo-nome">Nome</label>
-                <input type="text" name="nome" id="campo-nome" class="form-control" aria-describedby="inputGroupPrepend" required />
+                <label for="campo_nome">Nome</label>
+                <input type="text" name="nome" id="campo_nome" class="form-control" aria-describedby="inputGroupPrepend" required/>
                 <div class="invalid-feedback">
                     Digite um Nome valido
                 </div>
@@ -40,12 +40,12 @@
     <div class="row">
         <div class="col-12">
             <div class="form-group">
-                <label for="campo-cpf">CPF</label>
-                <input type="text" name="cpf" id="campo-cpf" class=" cpf form-control" aria-describedby="inputGroupPrepend" required />
+                <label for="campo_cpf">CPF</label>
+                <input type="text" name="cpf" id="campo_cpf" class=" cpf form-control" aria-describedby="inputGroupPrepend" required/>
                 <div class="invalid-feedback">
                     Digite um Cpf valido
                 </div>
-               
+
 
             </div>
         </div>
@@ -55,8 +55,9 @@
         <div class="col-12">
             <div>
                 <button class="btn btn-success float-lg-right"><i class="fas fa-save"></i> Salvar</button>
-   
+
             </div>
         </div>
     </div>
 </form>
+

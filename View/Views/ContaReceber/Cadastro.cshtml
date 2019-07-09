@@ -4,12 +4,12 @@
 }
 
 <h3 class="titulo">Cadastro Conta Receber</h3>
-<form action="@Url.Action("Store")" method="post">
+<form action="@Url.Action("Store")" method="post" id="needs-validation" novalidate>
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cliente">Cliente</label>
-                <select id="campo-cliente" name="idCliente" class="form-control">
+                <select id="campo-cliente" name="idCliente" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione um Cliente</option>
                     @foreach(Model.Cliente cliente in ViewBag.Clientes)
                     {
@@ -18,7 +18,7 @@
                 </select>
 
                 <label for="campo-categoria">Categoria</label>
-                <select id="campo-categoria" name="idCategoria" class="form-control">
+                <select id="campo-categoria" name="idCategoria" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione uma Categoria</option>
                     @foreach(Model.Categoria categoria in ViewBag.Categorias)
                     {
@@ -33,13 +33,16 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" name="nome" id="campo-nome" class="form-control" />
+                <input type="text" name="nome" id="campo-nome" class="form-control" required />
+                <div class="invalid-feedback">Digite um Nome Válido</div>
 
                 <label for="campo-data-pagamento">Data Pagamento</label>
-                <input type="date" name="dataPagamento" class="form-control" id="campo-data-pagamento" />
+                <input type="date" name="dataPagamento" class="form-control" id="campo-data-pagamento" required />
+                <div class="invalid-feedback">Digite uma Data de Pagamento</div>
 
                 <label for="campo-valor">Valor</label>
-                <input type="number" name="valor" class="form-control" id="campo-valor" />
+                <input type="number" name="valor" class="form-control" id="campo-valor" required />
+                <div class="invalid-feedback">Digite um Valor Válido</div>
             </div>
         </div>
     </div>

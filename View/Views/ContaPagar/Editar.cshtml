@@ -5,14 +5,14 @@
 
 <h3 class="titulo">Editar Conta Pagar</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation" novalidate>
     <input type="hidden" name="id" value="@ViewBag.ContaPagar.Id" />
 
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cliente">Clientes</label>
-                <select id="campo-cliente" name="idCliente" class="form-control">
+                <select id="campo-cliente" name="idCliente" class="form-control" required>
                     @foreach(Model.Cliente cliente in ViewBag.Clientes)
                     {
                         if(cliente.Id == ViewBag.ContaPagar.IdCliente)
@@ -27,7 +27,7 @@
                 </select>
 
                 <label for="campo-categoria">Categorias</label>
-                <select id="campo-categoria" name="idCategoria" class="form-control">
+                <select id="campo-categoria" name="idCategoria" class="form-control" required>
                     @foreach(Model.Categoria categoria in ViewBag.Categorias)
                     {
                         if(categoria.Id == ViewBag.ContaPagar.IdCategoria)
@@ -50,16 +50,20 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaPagar.Nome" class="form-control" />
+                <input type="text" name="nome" id="campo-nome" value="@ViewBag.ContaPagar.Nome" class="form-control" required />
+                <div class="invalid-feedback">Digite uma Nome Válido</div>
 
                 <label for="campo-data-vencimento">Data de Vencimento</label>
-                <input type="date" name="dataVencimento" id="campo-data-vencimento" value="@ViewBag.ContaPagar.DataVencimento.ToString("yyyy-MM-dd")" class="form-control" />
+                <input type="date" name="dataVencimento" id="campo-data-vencimento" value="@ViewBag.ContaPagar.DataVencimento.ToString("yyyy-MM-dd")" class="form-control" required />
+                <div class="invalid-feedback">Digite uma Data de Vencimento</div>
 
                 <label for="campo-data-pagamento">Data Pagamento</label>
-                <input type="date" name="dataPagamento" id="campo-data-pagamento" value="@ViewBag.ContaPagar.DataPagamento.ToString("yyyy-MM-dd")" class="form-control" />
+                <input type="date" name="dataPagamento" id="campo-data-pagamento" value="@ViewBag.ContaPagar.DataPagamento.ToString("yyyy-MM-dd")" class="form-control" required />
+                <div class="invalid-feedback">Digite uma Data de Pagamento</div>
 
                 <label for="campo-valor">Valor</label>
-                <input type="text" name="valor" id="campo-valor" value="@ViewBag.ContaPagar.Valor" class="form-control" />
+                <input type="text" name="valor" id="campo-valor" value="@ViewBag.ContaPagar.Valor" class="form-control" required />
+                <div class="invalid-feedback">Digite uma Valor Válido</div>
             </div>
         </div>
     </div>

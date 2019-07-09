@@ -186,6 +186,7 @@
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
     <Content Include="Content\nav.css" />
+    <Content Include="Content\notebook-with-dollars-symbol.ico" />
     <Content Include="Content\regular.css" />
     <Content Include="Content\regular.min.css" />
     <Content Include="Content\css\Site.css" />

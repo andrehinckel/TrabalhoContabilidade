@@ -5,14 +5,14 @@
 
 <h3 class="titulo">Editar</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation" novalidate>
     <input type="hidden" name="id" value="@ViewBag.Compra.Id" />
 
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cartao-credito">Cartão de Crédito</label>
-                <select id="campo-cartao-credito" name="idCartaoCredito" class="form-control">
+                <select id="campo-cartao-credito" name="idCartaoCredito" class="form-control" required>
                     @foreach (Model.CartaoCredito cartaoCredito in ViewBag.CartoesCredito)
                     {
                         if (cartaoCredito.Id == ViewBag.Compra.IdCartaoCredito)
@@ -33,9 +33,12 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-valor">Valor</label>
-                <input type="text" id="campo-valor" name="valor" value="@ViewBag.Compra.Valor" class="form-control" />
+                <input type="text" id="campo-valor" name="valor" value="@ViewBag.Compra.Valor" class="form-control" required />
+                <div class="invalid-feedback">Digite um Valor Válido</div>
+
                 <label for="campo-data-compra">Data de Compra</label>
-                <input type="date" id="campo-data-compra" name="dataCompra" value="@ViewBag.Compra.DataCompra.ToString("yyy-MM-dd")" class="form-control"/>
+                <input type="date" id="campo-data-compra" name="dataCompra" value="@ViewBag.Compra.DataCompra.ToString("yyy-MM-dd")" class="form-control" required />
+                <div class="invalid-feedback">Digite uma Data de Compra</div>
             </div>
         </div>
     </div>
@@ -43,9 +46,7 @@
     <div class="row">
         <div class="col-12">
             <button class="btn btn-success float-right" typeof="submit"><i class="fas fa-save"></i> Salvar</button>
-            <ul>
-                <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Compra")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
-            </ul>
+        
         </div>
     </div>
 </form>
