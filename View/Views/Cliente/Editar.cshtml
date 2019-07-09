@@ -5,14 +5,14 @@
 
 <h3 class="titulo">Editar Clientes</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation" novalidate>
     <input type="hidden" name="id" value="@ViewBag.Cliente.Id" required/>
 
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-contabilidade">Contabilidade</label>
-                <select id="campo-contabilidade" name="idContabilidade" class="form-control">
+                <select id="campo-contabilidade" name="idContabilidade" class="form-control" required>
 
                     @foreach (Model.Contabilidade contabilidade in ViewBag.Contabilidade)
                     {

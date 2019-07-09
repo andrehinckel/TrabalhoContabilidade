@@ -5,7 +5,7 @@
 
 <h3 class="titulo">Editar</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation" novalidate>
     <input type="hidden" name="id" value="@ViewBag.Contabilidade.Id" required/>
     <div class="row">
         <div class="col-12">

@@ -5,28 +5,13 @@
 
 <h3 class="titulo">Cadastro de Compra</h3>
 
-<script type="text/javascript">
-    (function () {
-        'use strict';
-        window.addEventListener('load', function () {
-            var form = document.getElementById('needs-validation');
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        }, false);
-    })();
-</script>
 
-<form action="@Url.Action("Store")" method="post" novalidate>
+<form action="@Url.Action("Store")" method="post" id="needs-validation" novalidate>
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cartao-credito">Cartão de Crédito</label>
-                <select id="campo-cartao-credio" name="idCartaoCredito" class="form-control">
+                <select id="campo-cartao-credio" name="idCartaoCredito" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione um cartão de crédito</option>
                     @foreach (Model.CartaoCredito cartaoCredito in ViewBag.CartoesCredito)
                     {
