@@ -3,7 +3,7 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h3>Cadastro Conta Receber</h3>
+<h3 class="titulo">Cadastro Conta Receber</h3>
 <form action="@Url.Action("Store")" method="post">
     <div class="row">
         <div class="col-12">
@@ -47,9 +47,7 @@
     <div class="row">
         <div class="col-12">
             <button class="btn btn-success float-right"><i class="fas fa-save"></i> Salvar</button>
-            <ul>
-                <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "ContaReceber")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
-            </ul>
+    
         </div>
     </div>
 </form>

@@ -3,7 +3,7 @@
     ViewBag.Title = "Editar";
 }
 
-<h3>Editar</h3>
+<h3 class="titulo">Editar</h3>
 
 <form action="@Url.Action("Update")" method="post">
     <input type="hidden" name="id" value="@ViewBag.Compra.Id" />
@@ -35,7 +35,7 @@
                 <label for="campo-valor">Valor</label>
                 <input type="text" id="campo-valor" name="valor" value="@ViewBag.Compra.Valor" class="form-control" />
                 <label for="campo-data-compra">Data de Compra</label>
-                <input type="date" id="campo-data-compra" name="dataCompra" value="@ViewBag.Compra.DataCompra" class="form-control"/>
+                <input type="date" id="campo-data-compra" name="dataCompra" value="@ViewBag.Compra.DataCompra.ToString("yyy-MM-dd")" class="form-control"/>
             </div>
         </div>
     </div>
