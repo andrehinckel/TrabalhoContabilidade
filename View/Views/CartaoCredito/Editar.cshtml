@@ -34,7 +34,8 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-numer">Número</label>
-                <input type="text" id="campo-numero" name="numero" value="@ViewBag.CartaoCredito.Numero" class="form-control" />
+                <input type="text" id="campo-numero" name="numero" value="@ViewBag.CartaoCredito.Numero" class="form-control"/>
+                <div class="invalid-feedback"> Digite um Nome válido</div>
             </div>
         </div>
     </div>
@@ -43,7 +44,7 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-data-vencimento">Data Vencimento</label>
-                <input type="date" id="campo-data-vencimento" name="dataVencimento" value="@ViewBag.CartaoCredito.DataVencimento.ToString()" class="form-control"/>
+                <input type="date" id="campo-data-vencimento" name="dataVencimento" value="@ViewBag.CartaoCredito.DataVencimento.ToString()" class="form-control" />
             </div>
         </div>
     </div>

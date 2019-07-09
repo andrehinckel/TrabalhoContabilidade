@@ -12,7 +12,7 @@
     <link href="~/Content/css/simple-sidebar.css" rel="stylesheet" />
     <link href="~/Content/css/Site.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="~/Content/css/compras.css"/>
+    <link rel="stylesheet" href="~/Content/css/compras.css" />
 
 
 </head>
@@ -24,7 +24,7 @@
     <script src="~/Scripts/mask.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://github.com/igorescobar/jQuery-Mask-Plugin/blob/master/src/jquery.mask.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -119,8 +119,6 @@
             </div>
         </div>
 
-
-
         <script>
             $("#menu-toggle").click(function (e) {
                 e.preventDefault();
@@ -135,6 +133,22 @@
             $(document).ready(function () {
                 $(".numerocvv").mask("999");
             });
+        </script>
+
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    var form = document.getElementById('needs-validation');
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                }, false);
+            })();
         </script>
 
 
