@@ -4,7 +4,23 @@
 }
 
 <h3>Cadastro de Nova Conta a Pagar</h3>
-<form action="@Url.Action("Store")" method="post">
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var form = document.getElementById('needs-validation');
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+</script>
+
+<form action="@Url.Action("Store")" method="post" novalidate>
     <div class="row">
         <div class="col-12">
             <div class="form-group">

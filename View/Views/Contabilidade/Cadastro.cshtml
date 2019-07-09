@@ -5,12 +5,31 @@
 
 <h3>Cadastro Contabilidade</h3>
 
-<form action="@Url.Action("Store")" method="post">
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var form = document.getElementById('needs-validation');
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+</script>
+
+<form action="@Url.Action("Store")" method="post" novalidate>
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input class="form-control" type="text" name="nome"/>
+                <input class="form-control" type="text" name="nome" required />
+            </div>
+            <div class="invalid-feedback">
+                Digite um Nome válido
             </div>
         </div>
     </div>
@@ -20,9 +39,9 @@
             <button class="btn btn-outline-success float-right" type="submit">
                 <i class="fas fa-pen"></i> Salvar
             </button>
-                <ul>
-                    <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Contabilidade")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
-                </ul>
+            <ul>
+                <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Contabilidade")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
+            </ul>
         </div>
     </div>
 </form>
