@@ -16,12 +16,13 @@ namespace Repository.Repositories
         public bool Alterar(CartaoCredito cartaoCredito)
         {
             SqlCommand command = Connection.OpenConnection();
-            command.CommandText = @"UPDATE FROM cartoes_credito SET id_cliente = @ID_CLIENTE, numero = @NUMERO, 
-data_vencimanto = @DATA_VENCIMENTO, cvv = @CVV WHERE id = @ID";
+            command.CommandText = @"UPDATE cartoes_credito SET id_cliente = @ID_CLIENTE, numero = @NUMERO, 
+data_vencimento = @DATA_VENCIMENTO, cvv = @CVV WHERE id = @ID";
             command.Parameters.AddWithValue("@ID_CLIENTE", cartaoCredito.IdCliente);
             command.Parameters.AddWithValue("@NUMERO", cartaoCredito.Numero);
             command.Parameters.AddWithValue("@DATA_VENCIMENTO", cartaoCredito.DataVencimento);
             command.Parameters.AddWithValue("@CVV", cartaoCredito.Cvv);
+            command.Parameters.AddWithValue("@ID", cartaoCredito.Id);
             int quantidade = command.ExecuteNonQuery();
             command.Connection.Close();
             return quantidade == 1;
