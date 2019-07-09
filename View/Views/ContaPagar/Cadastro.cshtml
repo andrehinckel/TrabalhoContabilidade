@@ -4,28 +4,13 @@
 }
 
 <h3 class="titulo">Cadastro de Nova Conta a Pagar</h3>
-<script type="text/javascript">
-    (function () {
-        'use strict';
-        window.addEventListener('load', function () {
-            var form = document.getElementById('needs-validation');
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        }, false);
-    })();
-</script>
 
-<form action="@Url.Action("Store")" method="post" novalidate>
+<form action="@Url.Action("Store")" method="post" id="needs-validation" novalidate>
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cliente">Cliente</label>
-                <select id="campo-cliente" name="idCliente" class="form-control">
+                <select id="campo-cliente" name="idCliente" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione um Cliente</option>
                     @foreach(Model.Cliente cliente in ViewBag.Clientes)
                     {
@@ -36,7 +21,7 @@
                 </select>
 
                 <label for="campo-categoria">Categoria</label>
-                <select id="campo-categoira" name="idCategoria" class="form-control">
+                <select id="campo-categoira" name="idCategoria" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione uma Categoria</option>
                     @foreach(Model.Categoria categoria in ViewBag.Categorias)
                     {

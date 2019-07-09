@@ -5,14 +5,14 @@
 
 <h3 class="titulo">Editar Conta Pagar</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation" novalidate>
     <input type="hidden" name="id" value="@ViewBag.ContaPagar.Id" />
 
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cliente">Clientes</label>
-                <select id="campo-cliente" name="idCliente" class="form-control">
+                <select id="campo-cliente" name="idCliente" class="form-control" required>
                     @foreach(Model.Cliente cliente in ViewBag.Clientes)
                     {
                         if(cliente.Id == ViewBag.ContaPagar.IdCliente)
@@ -27,7 +27,7 @@
                 </select>
 
                 <label for="campo-categoria">Categorias</label>
-                <select id="campo-categoria" name="idCategoria" class="form-control">
+                <select id="campo-categoria" name="idCategoria" class="form-control" required>
                     @foreach(Model.Categoria categoria in ViewBag.Categorias)
                     {
                         if(categoria.Id == ViewBag.ContaPagar.IdCategoria)

@@ -5,14 +5,15 @@
 
 <h3 class="titulo">Editar</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation">
     <input type="hidden" name="id" value="@ViewBag.Categoria.Id" />
 
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Categoria.Nome" class="form-control" />
+                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Categoria.Nome" class="form-control" required/>
+                <div class="invalid-feedback"> Digite um Nome válido</div>
             </div>
         </div>
     </div>

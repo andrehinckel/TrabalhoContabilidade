@@ -5,7 +5,7 @@
 
 <h3 class="titulo">Editar Cartão de Cédito</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation" novalidate>
     <input type="hidden" name="id" value="@ViewBag.CartaoCredito.Id" />
 
     <div class="row">
@@ -44,7 +44,8 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-data-vencimento">Data Vencimento</label>
-                <input type="date" id="campo-data-vencimento" name="dataVencimento" value="@ViewBag.CartaoCredito.DataVencimento.ToString("yyyy-MM-dd")" class="form-control" required/>
+                <input type="date" id="campo-data-vencimento" name="dataVencimento" value="@ViewBag.CartaoCredito.DataVencimento.ToString("yyyy-MM-dd")" class="form-control" />
+                <div class="invalid-feedback"> Selecione uma data válida</div>
             </div>
         </div>
     </div>
@@ -52,8 +53,8 @@
     <div class="row">
         <div class="col-12">
             <div class="form-group">
-                <label for="campo-cvv">Cvv</label>
-                <input type="text" name="cvv" id="campo-cvv" class="form-control"value="@ViewBag.CartaoCredito.Cvv" required/>
+                <label for="campo-cvv">Cvv</label>                <input type="text" name="cvv" id="campo-cvv" class="form-control"value="@ViewBag.CartaoCredito.Cvv" required/>               
+                <div class="invalid-feedback"> Digite um cvv válido</div>
             </div>
         </div>
     </div>

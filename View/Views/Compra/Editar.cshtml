@@ -5,14 +5,14 @@
 
 <h3 class="titulo">Editar</h3>
 
-<form action="@Url.Action("Update")" method="post">
+<form action="@Url.Action("Update")" method="post" id="needs-validation" novalidate>
     <input type="hidden" name="id" value="@ViewBag.Compra.Id" />
 
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-cartao-credito">Cartão de Crédito</label>
-                <select id="campo-cartao-credito" name="idCartaoCredito" class="form-control">
+                <select id="campo-cartao-credito" name="idCartaoCredito" class="form-control" required>
                     @foreach (Model.CartaoCredito cartaoCredito in ViewBag.CartoesCredito)
                     {
                         if (cartaoCredito.Id == ViewBag.Compra.IdCartaoCredito)
