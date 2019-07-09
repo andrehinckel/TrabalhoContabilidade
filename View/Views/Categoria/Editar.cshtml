@@ -6,25 +6,27 @@
 <h3>Editar</h3>
 
 <form action="@Url.Action("Update")" method="post">
-    <input type="hidden" name="id" value="@ViewBag.Contabilidade.Id"/>
+    <input type="hidden" name="id" value="@ViewBag.Categoria.Id" />
+
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input type="text" name="nome" value="@ViewBag.Contabilidade.Nome" class="form-control" id="campo-nome"/>
+                <input type="text" id="campo-nome" name="nome" value="@ViewBag.Categoria.Nome" class="form-control" />
             </div>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12">
-            <button type="submit" class="btn btn-success float-right">
+            <button class="btn btn-success float-right" type="submit">
                 <i class="fas fa-save"></i> Salvar
             </button>
             <ul>
-                <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Contabilidade")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
+                <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Usuario")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
             </ul>
         </div>
     </div>
+
 </form>
 

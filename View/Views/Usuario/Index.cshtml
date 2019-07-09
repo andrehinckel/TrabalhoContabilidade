@@ -3,9 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-
-
-<h3>Lista de Usuários</h3>
+<h3 class="titulo">Lista de Usuários</h3>
 <div class="row">
     <div class="col-12">
         <a href="@Url.Action("Cadastro")" class="btn btn-primary float-right mb-3">Novo Usuário</a>
@@ -34,7 +32,7 @@
                 <td>@usuario.Senha</td>
                 <td>@usuario.DataNascimento</td>
                 <td>
-                    <a href="@Url.Action("Editar", new { id = usuario.Id})" class="btn btn-outline-primary"><i class="fas fa-pen"></i> Update</a>
+                    <a href="@Url.Action("Editar", new { id = usuario.Id})" class="btn btn-outline-info"><i class="fas fa-pen"></i> Update</a>
 
                     <a href="@Url.Action("Delete", new { id = usuario.Id})" class="btn btn-outline-danger"><i class="fas fa-pen"></i> Delete </a>
                 </td>
@@ -53,4 +51,6 @@
         </tr>
     </tfoot>
 </table>
+
+
 

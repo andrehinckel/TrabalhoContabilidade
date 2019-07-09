@@ -102,9 +102,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database1.mdf" />
-    <Content Include="App_Data\Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
@@ -186,6 +186,7 @@
     <Content Include="Content\nav.css" />
     <Content Include="Content\regular.css" />
     <Content Include="Content\regular.min.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="Content\solid.css" />
     <Content Include="Content\solid.min.css" />
     <Content Include="Content\svg-with-js.css" />
@@ -323,6 +324,7 @@
     <Compile Include="Controllers\ContabilidadeController.cs" />
     <Compile Include="Controllers\ContaPagarController.cs" />
     <Compile Include="Controllers\ContaReceberController.cs" />
+    <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -346,11 +348,9 @@
     <Content Include="Views\Usuario\Editar.cshtml" />
     <Content Include="Views\Compra\Index.cshtml" />
     <Content Include="Views\Compra\Cadastro.cshtml" />
-    <Content Include="Views\Principal.cshtml" />
+    <Content Include="Views\Principal\Index.cshtml" />
     <Content Include="Views\Cliente\Cadastro.cshtml" />
     <Content Include="Views\Cliente\Editar.cshtml" />
-    <Content Include="Views\Categoria\Cadastro.cshtml" />
-    <Content Include="Views\Categoria\Editar.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -368,6 +368,8 @@
     <Content Include="Views\ContaReceber\Index.cshtml" />
     <Content Include="Views\ContaReceber\Cadastro.cshtml" />
     <Content Include="Views\ContaReceber\Editar.cshtml" />
+    <Content Include="Views\Categoria\Cadastro.cshtml" />
+    <Content Include="Views\Categoria\Editar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

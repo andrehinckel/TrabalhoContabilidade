@@ -3,7 +3,7 @@
     ViewBag.Title = "Cadastro";
 }
 
-<h3>Cadastro Contabilidade</h3>
+<h3>Cadastro de Categoria</h3>
 
 <script type="text/javascript">
     (function () {
@@ -21,28 +21,28 @@
     })();
 </script>
 
+
 <form action="@Url.Action("Store")" method="post" novalidate>
     <div class="row">
         <div class="col-12">
             <div class="form-group">
                 <label for="campo-nome">Nome</label>
-                <input class="form-control" type="text" name="nome" required />
+                <input id="campo-nome" type="text" name="nome" class="form-control" required />
+                <div class="invalid-feedback"> Difite um Nome válido</div>
             </div>
-            <div class="invalid-feedback">
-                Digite um Nome válido
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <button class="btn btn-success float-right"><i class="fas fa-save"></i> Salvar</button>
+                    <ul>
+                        <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Usuario")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12">
-            <button class="btn btn-outline-success float-right" type="submit">
-                <i class="fas fa-pen"></i> Salvar
-            </button>
-            <ul>
-                <li class="btn"><a class="btn btn-warning mt-1" href="@Url.Action("Index", "Contabilidade")"><i class="fas fa-undo-alt"></i> Voltar</a></li>
-            </ul>
-        </div>
-    </div>
 </form>
 
