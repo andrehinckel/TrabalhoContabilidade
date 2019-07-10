@@ -19,6 +19,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
+                    <th>Nome da Categoria</th>
                     <th>Nome do Cliente</th>
                     <th>Cpf do Cliente</th>
                     <th>Data Vencimento</th>
@@ -34,11 +35,12 @@
                     <tr>
                         <td>@contaPagar.Id</td>
                         <td>@contaPagar.Nome</td>
+                        <td>@contaPagar.Categoria.Nome</td>
                         <td>@contaPagar.Cliente.Nome</td>
                         <td>@contaPagar.Cliente.Cpf</td>
                         <td>@contaPagar.DataVencimento</td>
                         <td>@contaPagar.DataPagamento</td>
-                        <td>@contaPagar.Valor</td>
+                        <td>R$ @contaPagar.Valor</td>
                         <td>
                             <a href="@Url.Action("Editar", new { Id = contaPagar.Id })" class="btn btn-info"><i class="fas fa-pen"></i> Editar</a>
                             <a href="@Url.Action("Delete", new { Id = contaPagar.Id })" class="btn btn-danger"> <i class="fas fa-trash"></i> Apagar</a>
@@ -51,6 +53,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
+                    <th>Nome da Categoria</th>
                     <th>Nome do Cliente</th>
                     <th>Cpf do Cliente</th>
                     <th>Data Vencimento</th>

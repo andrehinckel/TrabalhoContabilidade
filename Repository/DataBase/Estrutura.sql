@@ -29,7 +29,7 @@ CREATE TABLE contas_pagar(
 	nome VARCHAR(45),
 	data_vencimento DATETIME2,
 	data_pagamento DATETIME2,
-	valor DECIMAL(14,2)
+	valor DECIMAL(12,2)
 );
 DROP TABLE contas_receber;
 CREATE TABLE contas_receber(
@@ -38,7 +38,7 @@ CREATE TABLE contas_receber(
 	id_categoria INT,
 	nome VARCHAR(45),
 	data_pagamento DATETIME2,
-	valor DECIMAL(14,2)
+	valor DECIMAL(12,2)
 );
 DROP TABLE cartoes_credito;
 CREATE TABLE cartoes_credito(
@@ -52,7 +52,7 @@ DROP TABLE compras;
 CREATE TABLE compras(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	id_cartao_credito INT,
-	valor DECIMAL(14,2),
+	valor DECIMAL(12,2),
 	data_compra DATETIME2
 );
 

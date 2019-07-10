@@ -12,18 +12,18 @@
                 <label for="campo-cliente">Cliente</label>
                 <select id="campo-cliente" name="idCliente" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione um Cliente</option>
-                    @foreach(Model.Cliente cliente in ViewBag.Clientes)
+                    @foreach (Model.Cliente cliente in ViewBag.Clientes)
                     {
                         <option value="@cliente.Id">@cliente.Nome, @cliente.Cpf</option>
 
-                        
+
                     }
                 </select>
 
                 <label for="campo-categoria">Categoria</label>
                 <select id="campo-categoira" name="idCategoria" class="form-control" required>
                     <option disabled="disabled" selected="selected">Selecione uma Categoria</option>
-                    @foreach(Model.Categoria categoria in ViewBag.Categorias)
+                    @foreach (Model.Categoria categoria in ViewBag.Categorias)
                     {
                         <option value="@categoria.Id">@categoria.Nome</option>
                     }
@@ -41,14 +41,14 @@
 
                 <label for="campo-data-vencimneto">Data Vencimento</label>
                 <input type="date" name="dataVencimento" id="campo-data-vencimneto" class="form-control" required />
-                <div class="invalid-feedback">Digite uma Data de Vencimento</div>
+                <div class="invalid-feedback">Digite/Selecione uma Data de Vencimento</div>
 
                 <label for="campo-data-pagamento">Data Pagamento</label>
                 <input type="date" name="dataPagamento" id="campo-data-pagamento" class="form-control" required />
-                <div class="invalid-feedback">Digite uma Data de Pagamento</div>
+                <div class="invalid-feedback">Digite/Selecione uma Data de Pagamento</div>
 
                 <label for="campo-valor">Valor</label>
-                <input type="number" name="valor" id="campo-valor" class="form-control" required />
+                <input type="text" name="valor" id="campo-valor" class="campovalor form-control" required />
                 <div class="invalid-feedback">Digite um Valor Válido</div>
             </div>
         </div>
@@ -57,7 +57,7 @@
     <div class="row">
         <div class="col-12">
             <button class="btn btn-success float-right"><i class="fas fa-save"></i> Salvar</button>
-    
+
         </div>
     </div>
 </form>
