@@ -36,7 +36,13 @@
 
         <!-- Sidebar -->
         <div class="bg-dark border-right" id="sidebar-wrapper">
-            <div class="sidebar-heading text-white">Dashboard </div>
+            <div class="sidebar-heading">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="@Url.Action("Index", "Principal")"><span class="sr-only">(current)</span> Dashboard</a>
+                    </li>
+                </ul>
+            </div>
             <div class="list-group list-group-flush list-group-item-dark bg-dark">
                 <div>
                     <nav class="navbar navbar-expand-lg navbar-light bg-dark float-left">
@@ -135,6 +141,15 @@
             $(document).ready(function () {
                 $(".numerocvv").mask("999");
             });
+            $(document).ready(function () {
+                $(".campovalor").mask('#.##0,00', { reverse: true });
+            });
+            $('.campovalor').on('blur', calculateValue);
+
+            function calculateValue() {
+                var valor = $('.campovalor').val().replace(',', '.');
+            }
+                
         </script>
 
         <script type="text/javascript">

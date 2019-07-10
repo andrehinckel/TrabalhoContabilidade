@@ -31,14 +31,14 @@ CREATE TABLE contas_pagar(
 	data_pagamento DATETIME2,
 	valor DECIMAL(10,2)
 );
-
+DROP TABLE contas_receber;
 CREATE TABLE contas_receber(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	id_cliente INT,
 	id_categoria INT,
 	nome VARCHAR(45),
 	data_pagamento DATETIME2,
-	valor DECIMAL(10,2)
+	valor DECIMAL(14,2)
 );
 
 CREATE TABLE cartoes_credito(
