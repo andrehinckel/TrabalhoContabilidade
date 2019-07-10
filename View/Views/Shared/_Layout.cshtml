@@ -49,13 +49,16 @@
                         <ul class="navbar-nav ml-auto mt-auto mt-lg-auto">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class=" fas fa-file-invoice-dollar fa-lg"></i>
-                                    Contabilidades
+                                    <i class=" fas fa-table fa-lg"></i>
+                                    Tabelas Básicas
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
                                     <li><a class="dropdown-item" href="@Url.Action("Index", "Usuario")">Usuarios</a></li>
                                     <li><a class="dropdown-item" href="@Url.Action("Index", "Cliente")">Clientes</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Index", "Contabilidade")">Nova Contabilidade</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "Contabilidade")">Contabilidade</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "ContaPagar")">Conta Pagar</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "ContaReceber")">Conta Receber</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "Categoria")">Categoria</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -64,22 +67,6 @@
 
                 <div>
 
-                    <nav class="navbar navbar-expand-lg navbar-light bg-dark float-left">
-                        <ul class="navbar-nav ml-auto mt-auto mt-lg-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class=" fas fa-folder fa-lg"></i>
-                                    Categorias
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
-                                    <li><a class="dropdown-item" href="@Url.Action("Index", "ContaPagar")">Conta Pagar</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Index", "ContaReceber")">Conta Receber</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Index", "Categoria")">Nova Categoria</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    </nav>
                 </div>
 
                 <div>
@@ -88,11 +75,11 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-shopping-cart fa-lg"></i>
-                                    Compras
+                                    Finanças
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
                                     <li><a class="dropdown-item" href="@Url.Action("Index", "CartaoCredito")">Cartões de Crédito</a></li>
-                                    <li><a class="dropdown-item" href="@Url.Action("Index", "Compra")">Nova compra</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("Index", "Compra")">Compras</a></li>
                                 </ul>
                             </li>
                         </ul>
