@@ -1,14 +1,17 @@
-﻿
+﻿DROP TABLE contabilidades;
 CREATE TABLE contabilidades(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(45)
 );
+DROP TABLE clientes;
+
 CREATE TABLE clientes(
 	id INT PRIMARY KEY IDENTITY(1,1),
-	id_contabilidade INT NOT NULL,
+	id_contabilidade INT,
 	nome VARCHAR(45),
 	cpf VARCHAR(14)
 );
+DROP TABLE usuarios;
 CREATE TABLE usuarios(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	login VARCHAR(45),
@@ -16,7 +19,7 @@ CREATE TABLE usuarios(
 	data_nascimento DATETIME2,
 	id_contabilidade INT
 );
-
+DROP TABLE categorias;
 CREATE TABLE categorias(
 	id INT PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(45)

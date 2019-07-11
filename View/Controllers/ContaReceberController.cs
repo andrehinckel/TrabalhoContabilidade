@@ -80,6 +80,7 @@ namespace View.Controllers
             contaReceber.DataPagamento = dataPagamento;
             contaReceber.IdCategoria = idCategoria;
             contaReceber.IdCliente = idCliente;
+            contaReceber.Valor = valor;
             repositorio.Alterar(contaReceber);
 
             return RedirectToAction("Index");
